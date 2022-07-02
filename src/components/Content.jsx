@@ -70,7 +70,7 @@ const Content = () => {
                                 <thead>
                                     <tr>
                                         <th scope="col" className="ps-2 py-3 text-left text-uppercase">Stocks</th>
-                                        <th scope="col" className="ps-2 py-3 text-left text-uppercase">Close price</th>
+                                        <th scope="col" className="ps-2 py-3 text-left text-uppercase">Latest price</th>
                                     </tr>
                                 </thead>
                             
