@@ -67,11 +67,17 @@ The API response data was too complicated to use.
 I was able to research and find a solution to this problem on [stackoverflow](https://stackoverflow.com/questions/72793450/how-to-loop-through-an-array-of-array-of-two-objects-alphavantage-api/72793784)
 
 ```javascript
+
+const dataArray = response.data
+
 const normalizeData = (data) => {
     return data.flatMap((d) => {
       return { ...d[0], ...d[1] };
     });
 };
+
+normalizeData(dataArray);
+
 ```
 ### problem 3: API call
 I used the useGetStocksQuery hook returned by RTK query to make the API call once the component mounts.
