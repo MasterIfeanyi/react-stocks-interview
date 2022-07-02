@@ -164,6 +164,8 @@ I used three different API to fetch data because of the lack of a single API tha
 
 **Stock Prices**
 
+[iexcloud](https://cloud.iexapis.com/v1/stock/market/batch?symbols=AAPL,META)
+
 This is how I structured my URL for a batch request
 
 ```javascript
@@ -172,6 +174,5 @@ This is how I structured my URL for a batch request
 
 ```
 
-[iexcloud](https://cloud.iexapis.com/v1/stock/market/batch?symbols=AAPL,META)
 
 
