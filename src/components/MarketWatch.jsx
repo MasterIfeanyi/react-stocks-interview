@@ -39,9 +39,9 @@ const MarketWatch = () => {
       <section className="section">
         <div className="container">
             <div className="row">
-                <div className="col-12">
-                    <h3 className="text-center mt-3">Market Watch</h3>
-                    <p className="lead text-center">Live Rates of currencies</p>
+                <div className="col-12 text-center">
+                    <h3 className="mt-3">Market Watch</h3>
+                    <p className="lead my-2 intro">Get live bid rates of currencies.</p>
                 </div>
             </div>
 

@@ -55,9 +55,9 @@ const Content = () => {
         <div className="container">
               
             <div className="row">
-                <div className="col-12">
-                    <h3 className="text-center mt-3">Stock Prices</h3>
-                    <p className="lead intro my-2 text-center">Get real-time data about all your favourite stocks in one place</p>
+                <div className="col-12 text-center">
+                    <h3 className="mt-3">Stock Prices</h3>
+                    <p className="lead intro my-2">Get real-time data about all your favourite stocks in one place.</p>
                 </div>
             </div>
               

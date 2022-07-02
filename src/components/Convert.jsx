@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import axios from "axios"
+import axios from "../api/axios"
 
 const Convert = () => {
 
@@ -23,7 +23,7 @@ const Convert = () => {
         e.preventDefault();
         if(!from && !to) return 
         try {
-            const response = await axios.post("http://localhost:3500/currency/getExchange", {from, to})
+            const response = await axios.post("/currency/getExchange", {from, to})
 
             const exchangeRate = response.data.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 
@@ -46,6 +46,7 @@ const Convert = () => {
                 <div className="row">
                     <div className="col-12 text-center">
                         <h3 className="my-3">Convert currencies</h3>
+                        <p className="lead intro my-2">Get good exchange rates.</p>
                     </div>
                 </div>
 
