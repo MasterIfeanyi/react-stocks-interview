@@ -67,7 +67,7 @@ const MarketWatch = () => {
                             </table>
                         </div>
                     )}
-                    {isError && <p className="text-center text-danger">{error.message}</p> }
+                    {isError && (<p className="text-center text-danger">An error occured: {error.error}</p>)}
                 </div>
             </div>
         </div>
