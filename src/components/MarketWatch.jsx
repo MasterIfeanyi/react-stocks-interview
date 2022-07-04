@@ -47,7 +47,7 @@ const MarketWatch = () => {
 
             <div className="row">
                 <div className="col-12">
-                    { isLoading && <p className="text-center">Loading...</p> }
+                    { isLoading && (<div className="mexican-wave text-center my-5"></div>) }
                     {isSuccess && (
                         <div className="table-responsive">
                             <table className="table tableDesign">
