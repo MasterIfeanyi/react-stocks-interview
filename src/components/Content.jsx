@@ -63,7 +63,7 @@ const Content = () => {
               
             <div className="row d-flex justify-content-center">
                 <div className="col-12">
-                    {isLoading && (<div className="mexican-wave text-center my-5"></div>)}
+                    {isLoading && <div className="mexican-wave text-center my-5"></div>}
                     {isSuccess && (
                         <div className="table-responsive">
                             <table className="table tableDesign">
