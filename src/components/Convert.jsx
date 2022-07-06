@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import axios from "../api/axios"
+import { convertNumber } from '../constants/currencySymbol'
 
 const Convert = () => {
 
@@ -11,7 +12,7 @@ const Convert = () => {
         {name: "European euros", symbol: "EUR"}
     ]
 
-    const [convertedValue, setConvertedValue] = useState("")
+    const [convertedValue, setConvertedValue] = useState("");
 
     const [amount, setAmount] = useState("")
 
@@ -27,8 +28,10 @@ const Convert = () => {
 
             const exchangeRate = response.data.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 
-            const value = exchangeRate * amount
-            setConvertedValue(value);
+            const answer = exchangeRate * amount;
+            const answerWithSymbol = convertNumber(answer, to);
+    
+            setConvertedValue(`${answerWithSymbol.toString()}`);
         } catch (error) {
             console.error(error);
         }
@@ -89,7 +92,7 @@ const Convert = () => {
                 <div className="row d-flex justify-content-center">
                     <div className="col-md-4">
                         <div className="item">
-                            {convertedValue ? Math.round(convertedValue) : "Answer"}
+                            {convertedValue ? convertedValue : "Answer"}
                         </div>
                     </div>
                 </div>
