@@ -17,7 +17,9 @@ const Content = () => {
         "BX",
         "GOOGL",
         "JPM",
-        "META"
+        "META",
+        "SNAP",
+        "NFLX"
     ]
 
     // const type = "monthly";
@@ -31,23 +33,23 @@ const Content = () => {
     } = useGetStocksQuery({tickerArray});
     
 
-    if (list) {
+    // if (list) {
 
-        const dataArray = list.map((item) => {
-            return { name: item.name, price: item.price }
-        })
+    //     const dataArray = list.map((item) => {
+    //         return { name: item.name, price: item.price }
+    //     })
 
 
-        // save to Database
-        const handleSaveStocks = async (tickerArray) => {
-            await axios.post("/stocks/saveStocks", { tickerArray })
-        }
+    //     // save to Database
+    //     const handleSaveStocks = async (tickerArray) => {
+    //         await axios.post("/stocks/saveStocks", { tickerArray })
+    //     }
 
-        if(dataArray.length === list.length) {
-            handleSaveStocks(dataArray);
-        }
+    //     if(dataArray.length === list.length) {
+    //         handleSaveStocks(dataArray);
+    //     }
 
-    }
+    // }
     
 
   return (

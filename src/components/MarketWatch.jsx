@@ -17,22 +17,22 @@ const MarketWatch = () => {
         error
     } = useGetLiveQuery({currencyArray})
 
-    if (list) {
+    // if (list) {
 
-        const dataArray = list.quotes.map((item) => {
-            return { symbol:  `${item.base_currency} / ${item.quote_currency}`, price: `${item.bid}/${item.ask}` }
-        })
+    //     const dataArray = list.quotes.map((item) => {
+    //         return { symbol:  `${item.base_currency} / ${item.quote_currency}`, price: `${item.bid}/${item.ask}` }
+    //     })
 
 
-        // save to Database
-        const handleSaveLive = async (currencyArray) => {
-            await axios.post("/currency/saveLive", { currencyArray })
-        }
+    //     // save to Database
+    //     const handleSaveLive = async (currencyArray) => {
+    //         await axios.post("/currency/saveLive", { currencyArray })
+    //     }
 
-        if (dataArray.length === list.quotes.length) {
-            handleSaveLive(dataArray);
-        }
-    }
+    //     if (dataArray.length === list.quotes.length) {
+    //         handleSaveLive(dataArray);
+    //     }
+    // }
 
 
   return (
