@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Set-up
+
+The dependencies required are all included in the `package.json` file. They will all be installed by running the `npm install` command.
+
+To start the project run `npm start`.
+
+## Check out the web app
+
+click the link below
+
+Open [ifeanyi-stock](https://ifeanyi-stock.netlify.app/) to view ti in the browser.
+
 ## Problems
 
 I ran into several problems while I was trying to create the project:
