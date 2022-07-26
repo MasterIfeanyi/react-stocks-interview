@@ -186,10 +186,10 @@ I used three different API to fetch data because of the lack of a single API tha
 
 This is how I structured my URL for a batch request
 
-baseUrl: `"htps://cloud.iexapis.com/v1"`
-endpoints: `"/stock/market/batch"`
-params: `"?symbols=aapl,fb,msft,byd,tsla&types=price"&types=quote`
-token: `"&token=YOUR_TOKEN_HERE"`
+>baseUrl: `"htps://cloud.iexapis.com/v1"`
+>endpoints: `"/stock/market/batch"`
+>params: `"?symbols=aapl,fb,msft,byd,tsla&types=price"&types=quote`
+>token: `"&token=YOUR_TOKEN_HERE"`
 
 ```javascript
 
