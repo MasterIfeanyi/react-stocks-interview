@@ -12,7 +12,7 @@ To start the project run `npm start`.
 
 click the link below
 
-Open [ifeanyi-stock](https://ifeanyi-stock.netlify.app/) to view ti in the browser.
+Open [ifeanyi-stock](https://ifeanyi-stock.netlify.app/) to view it in the browser.
 
 ## Problems
 
