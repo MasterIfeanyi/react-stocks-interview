@@ -6,7 +6,6 @@ export const stocksListApiSlice = apiSlice.injectEndpoints({
         getStocks: builder.query({
             query: (credentials) => ({
                 url: "/stocks/getBatchStocks",
-                keepUnusedDataFor: 300, 
                 method: "POST",
                 body: { ...credentials }
             })
@@ -14,7 +13,6 @@ export const stocksListApiSlice = apiSlice.injectEndpoints({
         getLive: builder.query({
             query: (credentials) => ({
                 url: "/currency/getLive",
-                keepUnusedDataFor: 300,
                 method: "POST",
                 body: { ...credentials }
             })

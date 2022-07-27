@@ -14,5 +14,6 @@ const baseQueryWithChange = async (args, api, extraOptions) => {
 
 export const apiSlice = createApi({
     baseQuery: baseQueryWithChange,
+    refetchOnMountOrArgChange: 5,
     endpoints: builder => ({})
 })
