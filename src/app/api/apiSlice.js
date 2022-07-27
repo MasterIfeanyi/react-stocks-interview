@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: "https://ifeanyi-stock-backend.herokuapp.com/"
+    // baseUrl: "http://localhost:3500"
 })
 
 const baseQueryWithChange = async (args, api, extraOptions) => {
@@ -14,6 +15,6 @@ const baseQueryWithChange = async (args, api, extraOptions) => {
 
 export const apiSlice = createApi({
     baseQuery: baseQueryWithChange,
-    refetchOnMountOrArgChange: 5,
+    // refetchOnMountOrArgChange: 5,
     endpoints: builder => ({})
 })

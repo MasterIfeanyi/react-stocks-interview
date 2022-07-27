@@ -1,4 +1,4 @@
-// import axios from "../api/axios";
+import {useEffect, useRef} from "react";
 import MarketTable from "./MarketTable";
 import { useGetLiveQuery } from '../features/stocksList/stocksListApiSlice';
 
@@ -8,14 +8,32 @@ const MarketWatch = () => {
 
     const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
 
+    const timerId = useRef();
+
 
     const {
         data: list, 
         isLoading,
         isError,
         isSuccess,
-        error
+        error,
+        refetch
     } = useGetLiveQuery({currencyArray})
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                timerId.current = await setInterval(() => refetch(), 5000);
+            } catch (e) {
+                console.log(e.message)
+            } 
+        }
+
+        fetchData();
+
+        return () => clearInterval(timerId.current)
+    })
 
     // if (list) {
 

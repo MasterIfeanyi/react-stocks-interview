@@ -1,6 +1,6 @@
 import { useGetStocksQuery } from '../features/stocksList/stocksListApiSlice';
 import TableData from './TableData';
-// import axios from "../api/axios";
+import { useEffect, useRef } from "react";
 
 
 
@@ -20,7 +20,10 @@ const Content = () => {
         "META",
         "SNAP",
         "NFLX"
-    ]
+    ];
+
+
+    const stockTimerId = useRef();
 
     // const type = "monthly";
 
@@ -29,8 +32,25 @@ const Content = () => {
         isLoading,
         isError, 
         isSuccess,
-        error
+        error,
+        refetch
     } = useGetStocksQuery({tickerArray});
+
+
+    useEffect(() => {
+
+        const fetchStocks = async () => {
+            try {
+                stockTimerId.current = await setInterval(() => refetch(), 10000);
+            } catch (e) {
+                console.log(e.message)
+            }
+        }
+
+        fetchStocks();
+
+        return () => clearInterval(stockTimerId.current)
+    })
     
 
     // if (list) {
