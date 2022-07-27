@@ -1,4 +1,4 @@
-import axios from "../api/axios";
+// import axios from "../api/axios";
 import MarketTable from "./MarketTable";
 import { useGetLiveQuery } from '../features/stocksList/stocksListApiSlice';
 

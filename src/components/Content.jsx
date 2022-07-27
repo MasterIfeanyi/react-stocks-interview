@@ -1,6 +1,6 @@
 import { useGetStocksQuery } from '../features/stocksList/stocksListApiSlice';
 import TableData from './TableData';
-import axios from "../api/axios";
+// import axios from "../api/axios";
 
 
 
