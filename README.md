@@ -176,9 +176,27 @@ I used three different API to fetch data because of the lack of a single API tha
 
 [alphaVantage](https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=GBP&apikey=demo)
 
+This is how I structured the URL for a request
+
+1. baseURL: `https://www.alphavantage.co/`
+2. enpoints: `query?function=CURRENCY_EXCHANGE_RATE`
+3. params: `&from_currency=${from}&to_currency=${to}`
+4. token: `&apikey=${process.env.ALPHA_VANTAGE_API_KEY}`
+
 **market watch**
 
 [marketdataTradermadeCom](https://marketdata.tradermade.com/api/v1/live?currency=USDGBP&api_key=demo)
+
+This is how I structured my URL for a batch request
+
+```javascript
+let currArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
+```
+
+1. baseURL: `"https://marketdata.tradermade.com/api/v1"`
+2. enpoints: `/live`
+3. params: `?currency=${currArray}`
+4. token: `&api_key=${token_key}`
 
 **Stock Prices**
 
@@ -192,6 +210,8 @@ This is how I structured my URL for a batch request
 4. token: `"&token=YOUR_TOKEN_HERE"`
 
 ```javascript
+
+let tickerArray = ["aapl","fb","msft","byd","tsla"]
 
 `https://cloud.iexapis.com/v1/stock/market/batch?symbols=${tickerArray.toString().toLowerCase()}&types=quote&token=${process.env.IEXCLOUD_API_KEY}`
 
