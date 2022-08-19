@@ -24,11 +24,15 @@ const Convert = () => {
         e.preventDefault();
         if(!from && !to) return 
         try {
-            const response = await axios.post("/currency/getExchange", {from, to})
+            const response = await axios.post("/currency/getCurrencyExchange", {from, to, amount})
 
-            const exchangeRate = response.data.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
+            // console.log(response.data.data.result)
 
-            const answer = exchangeRate * amount;
+            // const exchangeRate = response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
+            // const answer = exchangeRate * amount;
+
+            const answer = response.data.data.result
+
             const answerWithSymbol = convertNumber(answer, to);
     
             setConvertedValue(`${answerWithSymbol.toString()}`);
