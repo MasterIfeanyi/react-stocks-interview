@@ -22,17 +22,9 @@ const MarketWatch = () => {
 
     useEffect(() => {
 
-        const fetchData = async () => {
-            try {
-                timerId.current = await setInterval(() => refetch(), 5000);
-            } catch (e) {
-                console.log(e.message)
-            } 
-        }
+        timerId.current = await setInterval(() => refetch(), 5000);
 
-        fetchData();
-
-        return () => clearInterval(timerId.current)
+        return () => clearInterval(timerId.current);
     })
 
     // if (list) {
