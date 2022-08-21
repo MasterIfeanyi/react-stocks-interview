@@ -22,7 +22,7 @@ const MarketWatch = () => {
 
     useEffect(() => {
 
-        timerId.current = setInterval(() => refetch(), 5000);
+        timerId.current = setInterval(() => refetch(), 10000);
 
         return () => clearInterval(timerId.current);
     })

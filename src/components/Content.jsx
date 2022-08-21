@@ -39,15 +39,7 @@ const Content = () => {
 
     useEffect(() => {
 
-        const fetchStocks = async () => {
-            try {
-                stockTimerId.current = await setInterval(() => refetch(), 10000);
-            } catch (e) {
-                console.log(e.message)
-            }
-        }
-
-        fetchStocks();
+        stockTimerId.current = setInterval(() => refetch(), 10000);
 
         return () => clearInterval(stockTimerId.current)
     })
