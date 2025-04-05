@@ -15,7 +15,7 @@ const Header = () => {
             <nav class="navbar bg-white slow navbar-expand-md sticky-top divider">
                 <div class="container-fluid px-5">
 
-                    <a href="#" class="navbar-brand">
+                    <a class="navbar-brand">
                         <img src="./images/Mustard logo new.png" class="img-fluid" alt="" style={{width: "150px"}} />
                     </a>
 
