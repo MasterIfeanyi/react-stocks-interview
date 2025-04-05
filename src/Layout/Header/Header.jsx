@@ -16,7 +16,7 @@ const Header = () => {
                 <div class="container-fluid px-5">
 
                     <a href="#" class="navbar-brand">
-                        <img src="./images/Mustard logo new.png" class="img-fluid" alt="" style="width: 150px;" />
+                        <img src="./images/Mustard logo new.png" class="img-fluid" alt="" style={{width: "150px"}} />
                     </a>
 
 
@@ -46,7 +46,7 @@ const Header = () => {
 
 
                         <a href="#login" class=""><i class="ri ri-lock-unlock-fill"></i> Login</a>
-                        <a href="#get-started" class="btn btn-brand ms-3">Getting Started <i style="vertical-align: inherit;" class="ri ri-arrow-right-line"></i></a>
+                        <a href="#get-started" class="btn btn-brand ms-3">Getting Started <i style={{verticalAlign: "inherit"}} class="ri ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </nav>
