@@ -6,6 +6,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'remixicon/fonts/remixicon.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

@@ -72,6 +72,16 @@ a:hover {
   color: var(--brand);
 }
 
+a{
+  text-decoration: none;
+  color: #222;
+  transition: all 0.4s ease;
+}
+  
+a:hover{
+  color: var(--color-brand);
+}
+
 img {
   width: 100%;
 }
@@ -108,16 +118,111 @@ img{
 }
 
 
-/* .Header{
-  padding: 1rem 0.5rem; 
-  padding: 1rem;
-  background-color: #007bff;
-} */
 
-footer{
-  background-color: #007bff;
-  text-align: center;
+
+.slow {
+  transition: all 1s ease;
 }
+
+section {
+  padding: 90px 0px;
+}
+
+.display-flex {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+
+.bg-cover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
+
+.grey-bg {
+  background-color: var(--gray);
+}
+
+
+
+
+
+/* NavBar */
+
+
+.navbar .navbar-nav .nav-link {
+  color: black;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: all 0.5s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--brand);
+}
+
+.navbar .navbar-nav .nav-link.active{
+  color: var(--brand);
+}
+
+
+/* Button */
+
+.btn {
+  padding: 12px 28px;
+  margin: 0px 16px 0px 0px;
+  font-weight: 500;
+  color: white;
+  border-radius: 0px;
+}
+
+.btn.btn-brand {
+  background-color: var(--brand);
+  color: white;
+  border: 1px solid var(--brand);
+  transition: all 1.4s ease;
+}
+
+.btn.btn-brand:hover {
+  color: var(--brand);
+  background-color: white;
+  border: 1px solid var(--brand);
+}
+
+
+.btn-brand {
+  background-color: black;
+  border-color: 1px solid black;
+}
+
+
+.btn-brand:hover {
+  color: white;
+  background-color: var(--brand);
+}
+
+
+.btn-outline-brand {
+  background-color: white;
+  color: black;
+}
+
+
+.btn-outline-brand:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+
+
+
+
+
 
 /* custom styling */
 
@@ -163,15 +268,7 @@ footer{
 
 
 
-a{
-  text-decoration: none;
-  color: #222;
-  transition: all 0.4s ease;
-}
-  
-a:hover{
-  color: var(--color-brand);
-}
+
 
 form .form-control{
   color: black;

@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container-fluid px-5">
 
                 <a className="navbar-brand">
-                    <img src="./images/Mustard logo new.png" className="img-fluid" alt="" style={{width: "150px"}} />
+                    <img src="./Mustard logo new.png" className="img-fluid" alt="" style={{width: "150px"}} />
                 </a>
 
 
@@ -27,16 +27,16 @@ const Header = () => {
                         <li className="nav-item">
                             <a href="#footer" className="nav-link">Rewards</a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a href="#footer" className="nav-link">FAQs</a>
-                        </li>
-                        <li className="nav-item">
+                        </li> */}
+                        {/* <li className="nav-item">
                             <a href="#footer" className="nav-link">Ambassador</a>
-                        </li>
+                        </li> */}
                     </ul>
 
 
-                    <a href="#login" className=""><i className="ri ri-lock-unlock-fill"></i> Login</a>
+                    {/* <a href="#login" className=""><i className="ri ri-lock-unlock-fill"></i> Login</a> */}
                     <a href="#get-started" className="btn btn-brand ms-3">Getting Started <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
                 </div>
             </div>

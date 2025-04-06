@@ -1,0 +1,40 @@
+/* footer */
+footer {
+    padding: 4rem;
+}
+
+footer ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+footer li {
+    margin: 16px 0px;
+    list-style: none;
+}
+
+footer ul a {
+    color: var(--grey);
+}
+
+.social-links{
+    display: flex;
+}
+
+.social-links a{
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+
+.social-links a:hover{
+    background-color: black;
+    color: white;
+}
