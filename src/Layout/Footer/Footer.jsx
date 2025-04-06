@@ -22,21 +22,22 @@ const Foter = () => {
                         <ul>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Invest</Link></li>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Rewards</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">FAQs</Link></li>
+                            
                         </ul>
                     </div>
                     <div className="col-lg-2">
-                        <h4>Usage</h4>
+                        <h4>Company</h4>
                         <ul>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">About</Link></li>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Terms</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">FAQs</Link></li>
                         </ul>
                     </div>
                     <div className="col-lg-2">
                         <h4>Contact Info</h4>
                         <ul>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">live chat active from 9am - 5pm</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">hi@mustard.ng</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Press</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Phone: +999-000-9090</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Email: hi@mustard.ng</Link></li>
                         </ul>
                     </div>
 
