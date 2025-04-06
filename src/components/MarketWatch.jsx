@@ -48,10 +48,12 @@ const MarketWatch = () => {
   return (
       <section className="section">
         <div className="container">
-            <div className="row px-0 ">
+            <div className="row">
                 <div className="col-lg-5">
-                    <h2 className="text-center">Market Watch</h2>
-                    <p className="text-center">Get the latest market data and trends.</p>
+                    <div>
+                        <h1 className="hero-title">Currency Converter</h1>
+                        <p className="">Get the best rates in the market</p>
+                    </div>
                 </div>
 
 

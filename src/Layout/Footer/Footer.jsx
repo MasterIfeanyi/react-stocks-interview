@@ -10,7 +10,7 @@ const Foter = () => {
                 <div className="row gy-4">
 
                     <div className="col-lg-4">
-                        <img src="./images/Mustard logo new.png" alt="" style={{width: "160px"}} />                
+                        <img src="./Mustard logo new.png" alt="" style={{width: "160px"}} />                
                     </div>
 
 
@@ -33,9 +33,13 @@ const Foter = () => {
 
                     <div className="col-lg-2 offset-lg-1">
                         <h4>Socials</h4>
-                        <ul>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Invest</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Rewards</Link></li>
+                        <ul className="social-links ms-auto">
+                            <li className="nav-item">
+                                <i className="ri-twitter-fill icons"></i>
+                            </li>
+                            <li className="nav-item">
+                                <i className="ri-linkedin-fill icons"></i>
+                            </li>
                         </ul>
                     </div>
 
