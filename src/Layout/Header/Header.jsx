@@ -7,9 +7,9 @@ const Header = () => {
         <nav className="navbar bg-white slow py-4 navbar-expand-md sticky-top divider">
             <div className="container-fluid px-5">
 
-                <a className="navbar-brand">
+                <span className="navbar-brand">
                     <img src="./Mustard logo new.png" className="img-fluid" alt="" style={{width: "150px"}} />
-                </a>
+                </span>
 
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">

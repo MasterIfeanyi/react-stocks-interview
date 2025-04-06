@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Foter = () => {
 
-    const today = new Date();
-
 
     return (
-        // footer
         <footer>
             <div className="container">
                 <div className="row gy-4">
@@ -17,19 +14,12 @@ const Foter = () => {
                     </div>
 
 
-                    <div className="col-lg-2 offset-lg-1">
-                        <h4>Services</h4>
-                        <ul>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Invest</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Rewards</Link></li>
-                            
-                        </ul>
-                    </div>
+                    
                     <div className="col-lg-2">
                         <h4>Company</h4>
                         <ul>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">About</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Terms</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Terms and Condition</Link></li>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">FAQs</Link></li>
                         </ul>
                     </div>
@@ -38,6 +28,14 @@ const Foter = () => {
                         <ul>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Phone: +999-000-9090</Link></li>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Email: hi@mustard.ng</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className="col-lg-2 offset-lg-1">
+                        <h4>Socials</h4>
+                        <ul>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Invest</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Rewards</Link></li>
                         </ul>
                     </div>
 

@@ -48,37 +48,14 @@ const MarketWatch = () => {
   return (
       <section className="section">
         <div className="container">
-            <div className="row">
-                <div className="col-12 text-center">
-                    <h3 className="mt-3">Market Watch</h3>
-                    <p className="lead my-2 intro">Get live bid rates of currencies.</p>
+            <div className="row px-0 ">
+                <div className="col-lg-5">
+                    <h2 className="text-center">Market Watch</h2>
+                    <p className="text-center">Get the latest market data and trends.</p>
                 </div>
-            </div>
 
-            <div className="row">
-                <div className="col-12">
-                    {/* { isLoading && <div className="mexican-wave text-center my-5"></div> }
-                    {isSuccess && (
-                        <div className="table-responsive">
-                            <table className="table tableDesign">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" className="ps-2 py-3 text-left text-uppercase">Symbol</th>
-                                        <th scope="col" className="ps-2 py-3 text-left text-uppercase">Bid price</th>
-                                        <th scope="col" className="ps-2 py-3 text-left text-uppercase">Ask price</th>
-                                    </tr>
-                                </thead>
 
-                                <tbody className="bg-white" id="tbody">
-                                    {list.quotes.map((item, i) => (
-                                        <MarketTable key={i} item={item} />
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
-                    {isError && (<p className="text-center text-danger">An error occured: {error.error}</p>)} */}
-                </div>
+                <div className="col-lg-6"></div>
             </div>
         </div>
     </section>
