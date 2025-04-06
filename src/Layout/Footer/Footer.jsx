@@ -7,16 +7,6 @@ const Foter = () => {
 
 
     return (
-        // <footer classNameName="py-2">
-        //     <div classNameName="container">
-        //         <div classNameName="row">
-        //             <div classNameName="col-12">
-        //                 <p>Chima Ifeanyi &copy; {today.getFullYear()}</p>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </footer>
-
         // footer
         <footer>
             <div className="container">
@@ -30,23 +20,23 @@ const Foter = () => {
                     <div className="col-lg-2 offset-lg-1">
                         <h4>Services</h4>
                         <ul>
-                            <li><Link to="/">Invest</Link></li>
-                            <li><Link to="/">Rewards</Link></li>
-                            <li><Link to="/">FAQs</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Invest</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Rewards</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">FAQs</Link></li>
                         </ul>
                     </div>
                     <div className="col-lg-2">
                         <h4>Usage</h4>
                         <ul>
-                            <li><Link to="/">Terms</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Terms</Link></li>
                         </ul>
                     </div>
                     <div className="col-lg-2">
                         <h4>Contact Info</h4>
                         <ul>
-                            <li><Link to="/">live chat active from 9am - 5pm</Link></li>
-                            <li><Link to="/">hi@mustard.ng</Link></li>
-                            <li><Link to="/">Press</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">live chat active from 9am - 5pm</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">hi@mustard.ng</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Press</Link></li>
                         </ul>
                     </div>
 

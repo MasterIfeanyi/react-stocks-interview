@@ -18,6 +18,10 @@ footer ul a {
     color: var(--grey);
 }
 
+footer ul a:hover {
+    color: var(--brand);
+}
+
 .social-links{
     display: flex;
 }
@@ -37,4 +41,16 @@ footer ul a {
 .social-links a:hover{
     background-color: black;
     color: white;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+}
+
+.nav-item .nav-link:hover {
+    color: var(--brand);
 }
