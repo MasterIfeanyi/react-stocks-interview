@@ -2,6 +2,10 @@ import {useEffect, useRef} from "react";
 import MarketTable from "../MarketTable";
 import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
 import Reviews from "../Reviews/Reviews";
+import { CurrencyIcon } from "../../utils/Currency";
+import "./MarketWatch.css"
+
+
 
 const MarketWatch = () => {
 
@@ -9,6 +13,11 @@ const MarketWatch = () => {
     const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
 
     const timerId = useRef();
+
+    
+
+    // Currency Icon Component
+   
 
 
     // const {
@@ -44,11 +53,13 @@ const MarketWatch = () => {
     //     }
     // }
 
+    
 
-  return (
+
+    return (
       <section className="section">
         <div className="container mb-5">
-            <div className="row">
+            <div className="row align-items-center">
                 <div className="col-lg-5">
                     <div>
                         <h1 className="hero-title">Currency Converter</h1>
@@ -57,7 +68,16 @@ const MarketWatch = () => {
                 </div>
 
 
-                <div className="col-lg-6"></div>
+                    <div className="col-lg-6">
+
+                        <div className="outer-shell">
+                            <div className="inner__heading">
+                                <h4 className="inner__heading-text">Trade Currencies</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
             </div>
         </div>
         <Reviews />
