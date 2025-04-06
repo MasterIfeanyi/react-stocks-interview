@@ -105,14 +105,14 @@ img{
   background-color: whitesmoke;
   border: 1px solid blue;
   flex: 1;
-  /* padding: 1rem 0.5rem; */
 }
 
 
-.Header{
+/* .Header{
+  padding: 1rem 0.5rem; 
   padding: 1rem;
   background-color: #007bff;
-}
+} */
 
 footer{
   background-color: #007bff;
