@@ -1,7 +1,7 @@
 import {useEffect, useRef} from "react";
-import MarketTable from "./MarketTable";
-import { useGetLiveQuery } from '../features/stocksList/stocksListApiSlice';
-
+import MarketTable from "../MarketTable";
+import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
+import Reviews from "../Reviews/Reviews";
 
 const MarketWatch = () => {
 
@@ -47,7 +47,7 @@ const MarketWatch = () => {
 
   return (
       <section className="section">
-        <div className="container">
+        <div className="container mb-5">
             <div className="row">
                 <div className="col-lg-5">
                     <div>
@@ -60,6 +60,7 @@ const MarketWatch = () => {
                 <div className="col-lg-6"></div>
             </div>
         </div>
+        <Reviews />
     </section>
   )
 }

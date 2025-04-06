@@ -2,7 +2,10 @@ import Content from './components/Content';
 import Convert from './components/Convert';
 import {Routes, Route, Navigate} from "react-router-dom"
 import Layout from './Layout/Layout';
-import MarketWatch from './components/MarketWatch';
+import MarketWatch from './components/CurrencyConverter/MarketWatch';
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
 
 function App() {
 
