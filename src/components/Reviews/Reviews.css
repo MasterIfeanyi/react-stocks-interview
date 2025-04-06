@@ -33,6 +33,7 @@
 
 .owl-carousel {
     padding: 20px 0px;
+    border-radius: 18px;
 }
 
 
@@ -43,3 +44,35 @@
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+
+    .customer {
+        flex-direction: column;
+        align-items: center;
+        text-align: left; /* Center text on smaller screens */
+    }
+    .customer-img-container {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .customer__text {
+        max-width: 90%; /* Use a percentage for smaller screens */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 990px) {
+    .customer .customer__text p {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .customer__text {
+        max-width: 30%; /* Use a percentage for smaller screens */
+    }
+
+    .customer-img-container {
+        width: 50%;
+    }
+}
