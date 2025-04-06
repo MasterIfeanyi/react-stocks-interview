@@ -11,21 +11,21 @@ const MarketWatch = () => {
     const timerId = useRef();
 
 
-    const {
-        data: list, 
-        isLoading,
-        isError,
-        isSuccess,
-        error,
-        refetch
-    } = useGetLiveQuery({currencyArray})
+    // const {
+    //     data: list, 
+    //     isLoading,
+    //     isError,
+    //     isSuccess,
+    //     error,
+    //     refetch
+    // } = useGetLiveQuery({currencyArray})
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        timerId.current = setInterval(() => refetch(), 10000);
+    //     timerId.current = setInterval(() => refetch(), 10000);
 
-        return () => clearInterval(timerId.current);
-    })
+    //     return () => clearInterval(timerId.current);
+    // })
 
     // if (list) {
 
@@ -57,7 +57,7 @@ const MarketWatch = () => {
 
             <div className="row">
                 <div className="col-12">
-                    { isLoading && <div className="mexican-wave text-center my-5"></div> }
+                    {/* { isLoading && <div className="mexican-wave text-center my-5"></div> }
                     {isSuccess && (
                         <div className="table-responsive">
                             <table className="table tableDesign">
@@ -77,7 +77,7 @@ const MarketWatch = () => {
                             </table>
                         </div>
                     )}
-                    {isError && (<p className="text-center text-danger">An error occured: {error.error}</p>)}
+                    {isError && (<p className="text-center text-danger">An error occured: {error.error}</p>)} */}
                 </div>
             </div>
         </div>
