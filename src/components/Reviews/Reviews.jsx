@@ -39,8 +39,8 @@ const Reviews = () => {
                     <img className="customer-img" src="./images/naomi13.jpg" />
                 </div>
                 <div className='customer__text'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, libero culpa? Architecto.</p>
-                    <small>Sade Adu</small>
+                    <p>The exchange rates are always up-to-date and reliable. Perfect for my daily transactions!</p>
+                    <small>Naomi Osaka</small>
                 </div>
             </div>
             <div className='customer'>
@@ -48,8 +48,8 @@ const Reviews = () => {
                     <img className="customer-img" src="./images/naomi2.jpg" />
                 </div>
                 <div className='customer__text'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, libero culpa? Architecto.</p>
-                    <small>Sade Adu</small>
+                    <p>I love how simple and intuitive the interface is. It makes conversions so much easier!</p>
+                    <small>Oprah Winfrey</small>
                 </div>
             </div>
             <div className='customer'>
@@ -57,8 +57,8 @@ const Reviews = () => {
                     <img className="customer-img" src="./images/naomi24.jpg" />
                 </div>
                 <div className='customer__text'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, libero culpa? Architecto.</p>
-                    <small>Sade Adu</small>
+                    <p>This currency converter is incredibly fast and accurate. Highly recommend it to everyone!.</p>
+                    <small>Margot Robbie</small>
                 </div>
             </div>
         </div>
