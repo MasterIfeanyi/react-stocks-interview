@@ -23,6 +23,14 @@ const MarketWatch = () => {
         { symbol: "EUR", img:"bitcoin.jpg" }
     ]
 
+    const [from, setFrom] = useState("");
+    
+    const [to, setTo] = useState("");
+
+    const handleSelectFrom = (e) => setFrom(e.target.value)
+
+    const handleSelectTo = (e) => setTo(e.target.value);
+
     
 
     // Currency Icon Component
@@ -86,10 +94,8 @@ const MarketWatch = () => {
 
                             <div className="currency__converter">
                                 <div class="dropdown">
-                                    {/* <button class="dropdown-toggle">
-                                        <img src="bitcoin_logo.png" alt="BTC" /> <span class="selected-currency" >BTC</span> <span class="arrow-down">&darr;</span>
-                                    </button> */}
-                                    <select className="select-tag">
+                                    
+                                    <select className="select-tag" onChange={handleSelectFrom}>
                                         <option value="USD" selected>USD</option>
 
                                         {currencyArray
@@ -105,7 +111,7 @@ const MarketWatch = () => {
 
                             <div className="currency__converter">
                                 <div className="dropdown">
-                                    <select className="select-tag">
+                                    <select className="select-tag" onChange={handleSelectTo}>
                                         <option value="" selected>NGN</option>
 
                                         {currencyArray
