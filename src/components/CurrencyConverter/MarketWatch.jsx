@@ -4,7 +4,7 @@ import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
 import Reviews from "../Reviews/Reviews";
 import { CurrencyIcon } from "../../utils/Currency";
 import "./MarketWatch.css"
-
+import { useState } from "react";
 
 
 const MarketWatch = () => {
@@ -27,10 +27,15 @@ const MarketWatch = () => {
     
     const [to, setTo] = useState("");
 
+    const [amount, setAmount] = useState(0);
+
+    const [exchangeValue, setExchangeValue] = useState(0);
+
     const handleSelectFrom = (e) => setFrom(e.target.value)
 
     const handleSelectTo = (e) => setTo(e.target.value);
 
+    const handleAmount = (e) => setAmount(Number(e.target.value));
     
 
     // Currency Icon Component
@@ -95,7 +100,13 @@ const MarketWatch = () => {
                             <div className="currency__converter">
                                 <div class="dropdown">
                                     
-                                    <select className="select-tag" onChange={handleSelectFrom}>
+                                    <select 
+                                        className="select-tag" 
+                                        onChange={handleSelectFrom}
+                                        aria-label="From currency"
+                                        required 
+                                        value={from}  
+                                    >
                                         <option value="USD" selected>USD</option>
 
                                         {currencyArray
@@ -107,11 +118,28 @@ const MarketWatch = () => {
                                         ))}
                                     </select>
                                 </div>
+
+                                <input 
+                                    type="number"
+                                    value={amount}
+                                    required
+                                    onChange={handleAmount}
+                                    className="form-control currency__amount__input"
+                                    placeholder="Enter Amount"
+                                />
+
+
                             </div>
 
                             <div className="currency__converter">
                                 <div className="dropdown">
-                                    <select className="select-tag" onChange={handleSelectTo}>
+                                    <select 
+                                        className="select-tag" 
+                                        onChange={handleSelectTo}
+                                        aria-label="To currency"
+                                        required
+                                        value={to}  
+                                    >
                                         <option value="" selected>NGN</option>
 
                                         {currencyArray
@@ -123,6 +151,16 @@ const MarketWatch = () => {
                                             ))}
                                     </select>
                                 </div>
+
+                                <input 
+                                    type="number"
+                                    value={exchangeValue}
+                                    required
+                                    className="form-control currency__amount__input"
+                                    placeholder="Enter Amount"
+                                />
+
+
                             </div>
 
                             <button className="swap__button">Swap</button>
