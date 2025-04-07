@@ -35,9 +35,15 @@ const MarketWatch = () => {
 
     const handleSelectTo = (e) => setTo(e.target.value);
 
+    // const numericAmount = amount.replace(/,/g, ""); // Convert to a plain number
+
+
     const handleAmount = (e) => {
-        const value = Number(e.target.value);
-        setAmount(value === "" ? "" : value);
+        const value = Number(e.target.value.replace(/,/g, ""));
+        if (!isNaN(value)) {
+            const formattedValue = new Intl.NumberFormat("en-US").format(value); // Format with commas
+            setAmount(value === "" ? "" : formattedValue);
+        }
     };
     
 
