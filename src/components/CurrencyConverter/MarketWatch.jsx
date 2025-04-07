@@ -27,15 +27,18 @@ const MarketWatch = () => {
     
     const [to, setTo] = useState("");
 
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState("");
 
-    const [exchangeValue, setExchangeValue] = useState(0);
+    const [exchangeValue, setExchangeValue] = useState("");
 
     const handleSelectFrom = (e) => setFrom(e.target.value)
 
     const handleSelectTo = (e) => setTo(e.target.value);
 
-    const handleAmount = (e) => setAmount(Number(e.target.value));
+    const handleAmount = (e) => {
+        const value = Number(e.target.value);
+        setAmount(value === "" ? "" : value);
+    };
     
 
     // Currency Icon Component
@@ -121,7 +124,7 @@ const MarketWatch = () => {
 
                                 <input 
                                     type="number"
-                                    value={amount}
+                                    value={amount || ""}
                                     required
                                     onChange={handleAmount}
                                     className="form-control currency__amount__input"
@@ -157,7 +160,7 @@ const MarketWatch = () => {
                                     value={exchangeValue}
                                     required
                                     className="form-control currency__amount__input"
-                                    placeholder="Enter Amount"
+                                    placeholder="Value"
                                 />
 
 
