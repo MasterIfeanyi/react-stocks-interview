@@ -10,9 +10,18 @@ import "./MarketWatch.css"
 const MarketWatch = () => {
 
 
-    const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
+    // const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
 
     const timerId = useRef();
+
+
+    const currencyArray = [
+        { symbol: "USD", img:"bitcoin.jpg" },
+        { symbol: "JPY", img:"bitcoin.jpg" },
+        { symbol: "NGN", img:"bitcoin.jpg" },
+        { symbol: "GBP", img:"bitcoin.jpg" },
+        { symbol: "EUR", img:"bitcoin.jpg" }
+    ]
 
     
 
@@ -77,39 +86,35 @@ const MarketWatch = () => {
 
                             <div className="currency__converter">
                                 <div class="dropdown">
-                                    <button class="dropdown-toggle">
+                                    {/* <button class="dropdown-toggle">
                                         <img src="bitcoin_logo.png" alt="BTC" /> <span class="selected-currency" >BTC</span> <span class="arrow-down">&darr;</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a href="#" data-currency="BTC"><img src="bitcoin_logo.png" alt="BTC" /> BTC</a>
+                                    </button> */}
+                                    <select className="select-tag">
+                                        <option value="USD" selected>USD</option>
 
-
-                                        <a href="#" data-currency="ETH"><img src="ethereum_logo.png" alt="ETH"/> ETH</a>
-
-
-                                        <a href="#" data-currency="USDT"><img src="tether_logo.png" alt="USDT" /> USDT</a>
-
-                                        <a href="#" data-currency="NGN"><img src="nigeria_flag.png" alt="NGN"/> NGN</a>
-                                    </div>
+                                        {currencyArray
+                                            .filter((currency) => currency.symbol !== "USD") // Exclude USD from the array
+                                            .map((currency, i) => (
+                                                <option key={i} value={currency.symbol} data-icon={currency.img}>
+                                                <span className="option-icon">{currency.symbol}</span>
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
 
                             <div className="currency__converter">
                                 <div className="dropdown">
                                     <select className="select-tag">
-                                        <option value="btc">
-                                            <span class="option-icon btc-icon">฿</span> BTC
-                                        </option>
-                                        
-                                        <option value="ngn" data-icon="./images/nigeria_flag.webp">
-                                            NGN
-                                        </option>
-                                        <option value="eth">
-                                            <span class="option-icon eth-icon">E</span> ETH
-                                        </option>
-                                        <option value="usdt">
-                                            <span class="option-icon usdt-icon">T</span> USDT
-                                        </option>
+                                        <option value="" selected>NGN</option>
+
+                                        {currencyArray
+                                            .filter((currency) => currency.symbol !== "NGN") // Exclude NGN from the array
+                                            .map((currency, i) => (
+                                                <option key={i} value={currency.symbol} data-icon={currency.img}>
+                                                    <span className="option-icon">{currency.symbol}</span>
+                                                </option>
+                                            ))}
                                     </select>
                                 </div>
                             </div>
