@@ -74,6 +74,48 @@ const MarketWatch = () => {
                             <div className="inner__heading">
                                 <h4 className="inner__heading-text">Trade Currencies</h4>
                             </div>
+
+                            <div className="currency__converter">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle">
+                                        <img src="bitcoin_logo.png" alt="BTC" /> <span class="selected-currency" >BTC</span> <span class="arrow-down">&darr;</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#" data-currency="BTC"><img src="bitcoin_logo.png" alt="BTC" /> BTC</a>
+
+
+                                        <a href="#" data-currency="ETH"><img src="ethereum_logo.png" alt="ETH"/> ETH</a>
+
+
+                                        <a href="#" data-currency="USDT"><img src="tether_logo.png" alt="USDT" /> USDT</a>
+
+                                        <a href="#" data-currency="NGN"><img src="nigeria_flag.png" alt="NGN"/> NGN</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="currency__converter">
+                                <div className="dropdown">
+                                    <select className="select-tag">
+                                        <option value="btc">
+                                            <span class="option-icon btc-icon">฿</span> BTC
+                                        </option>
+                                        
+                                        <option value="ngn" data-icon="./images/nigeria_flag.webp">
+                                            NGN
+                                        </option>
+                                        <option value="eth">
+                                            <span class="option-icon eth-icon">E</span> ETH
+                                        </option>
+                                        <option value="usdt">
+                                            <span class="option-icon usdt-icon">T</span> USDT
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button className="swap__button">Swap</button>
+                            
                         </div>
 
 

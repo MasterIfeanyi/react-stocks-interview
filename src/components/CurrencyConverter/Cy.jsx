@@ -9,29 +9,29 @@ const Cy = () => {
             <label className="form-label">Amount to Send</label>
             <div className="currency-input">
                 <div className="currency-select" onClick={() => setShowSendDropdown(!showSendDropdown)}>
-                <CurrencyIcon currency={sendCurrency} />
-                <span className="ms-2">{sendCurrency}</span>
-                <i className="fas fa-chevron-down ms-2" style={{ fontSize: "12px" }}></i>
-                
-                {/* Send Currency Dropdown */}
-                {showSendDropdown && (
-                    <div className="currency-dropdown show">
-                    {sendCurrencies.map(currency => (
-                        <div 
-                        key={currency} 
-                        className="currency-option"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            handleSendCurrencyChange(currency);
-                        }}
-                        >
-                        <CurrencyIcon currency={currency} />
-                        <span className="currency-option-name ms-2">{currencies[currency].name}</span>
-                        <span className="currency-option-code">{currency}</span>
+                    <CurrencyIcon currency={sendCurrency} />
+                    <span className="ms-2">{sendCurrency}</span>
+                    <i className="fas fa-chevron-down ms-2" style={{ fontSize: "12px" }}></i>
+                    
+                    {/* Send Currency Dropdown */}
+                    {showSendDropdown && (
+                        <div className="currency-dropdown show">
+                        {sendCurrencies.map(currency => (
+                            <div 
+                                key={currency} 
+                                className="currency-option"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleSendCurrencyChange(currency);
+                                }}
+                            >
+                                <CurrencyIcon currency={currency} />
+                                <span className="currency-option-name ms-2">{currencies[currency].name}</span>
+                                <span className="currency-option-code">{currency}</span>
+                            </div>
+                        ))}
                         </div>
-                    ))}
-                    </div>
-                )}
+                    )}
                 </div>
                 <input 
                 type="text" 
