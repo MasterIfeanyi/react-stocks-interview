@@ -35,15 +35,9 @@ const MarketWatch = () => {
 
     const handleSelectTo = (e) => setTo(e.target.value);
 
-    // const numericAmount = amount.replace(/,/g, ""); // Convert to a plain number
-
-
     const handleAmount = (e) => {
-        const value = Number(e.target.value.replace(/,/g, ""));
-        if (!isNaN(value)) {
-            const formattedValue = new Intl.NumberFormat("en-US").format(value); // Format with commas
-            setAmount(value === "" ? "" : formattedValue);
-        }
+        const value = Number(e.target.value);
+        setAmount(value === "" ? "" : value);
     };
     
 
@@ -103,7 +97,7 @@ const MarketWatch = () => {
 
                         <div className="outer-shell">
                             <div className="inner__heading">
-                                <h4 className="inner__heading-text">Trade Currencies</h4>
+                                <h4 className="inner__heading-text">Swap</h4>
                             </div>
 
                             <div className="currency__converter">
@@ -168,7 +162,7 @@ const MarketWatch = () => {
 
                             </div>
 
-                            <button className="swap__button">Swap</button>
+                            {/* <button className="swap__button">Swap</button> */}
                             
                         </div>
 
