@@ -101,7 +101,7 @@ const MarketWatch = () => {
                             </div>
 
                             <div className="currency__converter">
-                                <div class="dropdown">
+                                <div className="dropdown">
                                     
                                     <select 
                                         className="select-tag" 
@@ -110,13 +110,13 @@ const MarketWatch = () => {
                                         required 
                                         value={from}  
                                     >
-                                        <option value="USD" selected>USD</option>
+                                        <option value="USD">USD</option>
 
                                         {currencyArray
                                             .filter((currency) => currency.symbol !== "USD") // Exclude USD from the array
                                             .map((currency, i) => (
                                                 <option key={i} value={currency.symbol} data-icon={currency.img}>
-                                                <span className="option-icon">{currency.symbol}</span>
+                                                {currency.symbol}
                                             </option>
                                         ))}
                                     </select>
@@ -143,25 +143,21 @@ const MarketWatch = () => {
                                         required
                                         value={to}  
                                     >
-                                        <option value="" selected>NGN</option>
+                                        <option value="NGN">NGN</option>
 
                                         {currencyArray
                                             .filter((currency) => currency.symbol !== "NGN") // Exclude NGN from the array
                                             .map((currency, i) => (
                                                 <option key={i} value={currency.symbol} data-icon={currency.img}>
-                                                    <span className="option-icon">{currency.symbol}</span>
+                                                    {currency.symbol}
                                                 </option>
                                             ))}
                                     </select>
                                 </div>
 
-                                <input 
-                                    type="number"
-                                    value={exchangeValue}
-                                    required
+                                <div 
                                     className="form-control currency__amount__input"
-                                    placeholder="Value"
-                                />
+                                >{exchangeValue ? exchangeValue : "Value"}</div>
 
 
                             </div>
