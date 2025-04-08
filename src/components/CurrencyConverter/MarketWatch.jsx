@@ -4,6 +4,7 @@ import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
 import Reviews from "../Reviews/Reviews";
 import { CurrencyIcon } from "../../utils/Currency";
 import "./MarketWatch.css"
+import axios from "axios";
 import { useState } from "react";
 
 
@@ -23,13 +24,17 @@ const MarketWatch = () => {
         { symbol: "EUR", img:"bitcoin.jpg" }
     ]
 
-    const [from, setFrom] = useState("");
+    const [from, setFrom] = useState("USD");
     
-    const [to, setTo] = useState("");
+    const [to, setTo] = useState("NGN");
 
     const [amount, setAmount] = useState("");
 
     const [exchangeValue, setExchangeValue] = useState("");
+
+    const [debounceTimeout, setDebounceTimeout] = useState(null)
+
+    const [loading, setLoading] = useState(false)
 
     const handleSelectFrom = (e) => setFrom(e.target.value)
 
@@ -38,45 +43,73 @@ const MarketWatch = () => {
     const handleAmount = (e) => {
         const value = Number(e.target.value);
         setAmount(value === "" ? "" : value);
+
+        // Clear any existing timeout
+        if (debounceTimeout) {
+            clearTimeout(debounceTimeout)
+        }
+
+        // Set a new timeout
+        const timeout = setTimeout(() => {
+            if (value && from && to) {
+            convertCurrency(value, from, to)
+            } else {
+            setExchangeValue("")
+            }
+        }, 500)
+
+        setDebounceTimeout(timeout)
     };
+
+
+    const convertCurrency = async (amount, fromCurrency, toCurrency) => {
+        if(!amount || isNaN(amount)) return
+
+        setLoading(true)
+        try {
+            const response = await axios.get(`https://v6.exchangerate-api.com/v6/b2406f81700a1c886d5e0f01/latest/${fromCurrency}`)
+
+            if (response.data && response.data.conversion_rates) {
+                const rate = response.data.conversion_rates[toCurrency]
+                const result = (Number.parseFloat(amount) * rate).toFixed(2)
+                setExchangeValue(result)
+            }
+
+            console.log(response)
+            
+        } catch (error) {
+            console.error("Error fetching exchange rates:", error)
+            setExchangeValue("Error")
+        } finally {
+            setLoading(false)
+        }
+
+    }
     
 
-    // Currency Icon Component
-   
+    // Effect to handle currency conversion when currencies change
+    useEffect(() => {
+        if (amount && from && to) {
+            // Clear any existing timeout
+            if (debounceTimeout) {
+                clearTimeout(debounceTimeout)
+            }
 
+            // Set a new timeout
+            const timeout = setTimeout(() => {
+                convertCurrency(amount, from, to)
+            }, 500)
 
-    // const {
-    //     data: list, 
-    //     isLoading,
-    //     isError,
-    //     isSuccess,
-    //     error,
-    //     refetch
-    // } = useGetLiveQuery({currencyArray})
+            setDebounceTimeout(timeout)
+        }
 
-    // useEffect(() => {
-
-    //     timerId.current = setInterval(() => refetch(), 10000);
-
-    //     return () => clearInterval(timerId.current);
-    // })
-
-    // if (list) {
-
-    //     const dataArray = list.quotes.map((item) => {
-    //         return { symbol:  `${item.base_currency} / ${item.quote_currency}`, price: `${item.bid}/${item.ask}` }
-    //     })
-
-
-    //     // save to Database
-    //     const handleSaveLive = async (currencyArray) => {
-    //         await axios.post("/currency/saveLive", { currencyArray })
-    //     }
-
-    //     if (dataArray.length === list.quotes.length) {
-    //         handleSaveLive(dataArray);
-    //     }
-    // }
+        // Cleanup function to clear timeout when component unmounts
+        return () => {
+            if (debounceTimeout) {
+                clearTimeout(debounceTimeout)
+            }
+        }
+    }, [from, to]) // Only run when currency selections change
 
     
 
