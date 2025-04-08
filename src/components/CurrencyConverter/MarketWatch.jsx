@@ -15,11 +15,11 @@ const MarketWatch = () => {
 
 
     const currencyArray = [
-        { symbol: "USD", img:"bitcoin.jpg" },
-        { symbol: "JPY", img:"bitcoin.jpg" },
-        { symbol: "NGN", img:"bitcoin.jpg" },
-        { symbol: "GBP", img:"bitcoin.jpg" },
-        { symbol: "EUR", img:"bitcoin.jpg" }
+        { symbol: "USD", img:`\u0024` },
+        { symbol: "JPY", img:`\u00A5` },
+        { symbol: "NGN", img:`\u20A6` },
+        { symbol: "GBP", img:`\uFFE1` },
+        { symbol: "EUR", img:`\u20AC` }
     ]
 
     const [from, setFrom] = useState("USD");

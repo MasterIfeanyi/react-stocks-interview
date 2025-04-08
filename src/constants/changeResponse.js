@@ -3,7 +3,7 @@ export const changeResponse = async (list) => {
     console.log(dataArray) // 10 elements
     
     if (Array.isArray(dataArray)) {
-        const finalArray = await dataArray.filter((each) => each.length !== 1) // 6 elements
+        const finalArray = dataArray.filter((each) => each.length !== 1) // 6 elements
 
         const normalizeData = (data) => {
             return data.flatMap((d) => {

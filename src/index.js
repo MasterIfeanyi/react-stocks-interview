@@ -12,7 +12,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import 'owl.carousel/dist/owl.carousel.js';
 import 'owl.carousel';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './app/store';
 import { Provider } from 'react-redux';
@@ -21,11 +21,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/*" element={<App />} />
-        </Routes>
-      </Router>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
