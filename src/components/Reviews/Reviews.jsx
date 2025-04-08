@@ -36,7 +36,7 @@ const Reviews = () => {
         <div className="owl-carousel owl-theme" id='review-carousel' style={{backgroundColor: "#212529"}}>
             <div className='customer'>
                 <div className="customer-img-container">
-                    <img className="customer-img" src="./images/naomi13.jpg" />
+                    <img alt='user__img' className="customer-img" src="./images/naomi13.jpg" />
                 </div>
                 <div className='customer__text'>
                     <p>The exchange rates are always up-to-date and reliable. Perfect for my daily transactions!</p>
@@ -45,7 +45,7 @@ const Reviews = () => {
             </div>
             <div className='customer'>
                 <div className="customer-img-container">
-                    <img className="customer-img" src="./images/naomi2.jpg" />
+                    <img alt='user__img' className="customer-img" src="./images/naomi2.jpg" />
                 </div>
                 <div className='customer__text'>
                     <p>I love how simple and intuitive the interface is. It makes conversions so much easier!</p>
@@ -54,7 +54,7 @@ const Reviews = () => {
             </div>
             <div className='customer'>
                 <div className="customer-img-container">
-                    <img className="customer-img" src="./images/naomi24.jpg" />
+                    <img alt='user__img' className="customer-img" src="./images/naomi24.jpg" />
                 </div>
                 <div className='customer__text'>
                     <p>This currency converter is incredibly fast and accurate. Highly recommend it to everyone!.</p>

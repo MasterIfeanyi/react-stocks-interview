@@ -1,19 +1,17 @@
 import {useEffect} from "react";
-// import MarketTable from "../MarketTable";
-// import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
 import Reviews from "../Reviews/Reviews";
-// import { CurrencyIcon } from "../../utils/Currency";
 import "./MarketWatch.css"
 import axios from "axios";
 import { useState } from "react";
+import useDebounce from "../../hooks/useDebounce";
 
 
 const MarketWatch = () => {
 
 
-    // const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
+    
 
-    // const timerId = useRef();
+    
 
 
     const currencyArray = [
@@ -36,30 +34,21 @@ const MarketWatch = () => {
 
     const [loading, setLoading] = useState(false)
 
+
+    // Use the debounce hook for the amount
+    const debouncedAmount = useDebounce(amount, 500);
+
     const handleSelectFrom = (e) => setFrom(e.target.value)
 
     const handleSelectTo = (e) => setTo(e.target.value);
 
+    // Simplified amount handler - no need for manual debounce
     const handleAmount = (e) => {
-        const value = Number(e.target.value);
-        setAmount(value === "" ? "" : value);
-
-        // Clear any existing timeout
-        if (debounceTimeout) {
-            clearTimeout(debounceTimeout)
-        }
-
-        // Set a new timeout
-        const timeout = setTimeout(() => {
-            if (value && from && to) {
-            convertCurrency(value, from, to)
-            } else {
-            setExchangeValue("")
-            }
-        }, 500)
-
-        setDebounceTimeout(timeout)
+        const value = e.target.value;
+        setAmount(value === "" ? "" : Number(value));
     };
+
+    
 
 
     const convertCurrency = async (amount, fromCurrency, toCurrency) => {
@@ -87,30 +76,17 @@ const MarketWatch = () => {
     }
     
 
-    // Effect to handle currency conversion when currencies change
+    // Effect to handle currency conversion when amount or currencies change
     useEffect(() => {
-        if (amount && from && to) {
-            // Clear any existing timeout
-            if (debounceTimeout) {
-                clearTimeout(debounceTimeout)
-            }
-
-            // Set a new timeout
-            const timeout = setTimeout(() => {
-                convertCurrency(amount, from, to)
-            }, 500)
-
-            setDebounceTimeout(timeout)
+        if (debouncedAmount && from && to) {
+            convertCurrency(debouncedAmount, from, to);
+        } else {
+            setExchangeValue("");
         }
+    }, [debouncedAmount, from, to]); // Run when debounced amount or currency selections change
 
-        // Cleanup function to clear timeout when component unmounts
-        return () => {
-            if (debounceTimeout) {
-                clearTimeout(debounceTimeout)
-            }
-        }
-    }, [from, to]) // Only run when currency selections change
 
+    
     
 
 
