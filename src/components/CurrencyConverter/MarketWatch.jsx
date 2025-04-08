@@ -30,7 +30,6 @@ const MarketWatch = () => {
 
     const [exchangeValue, setExchangeValue] = useState("");
 
-    const [debounceTimeout, setDebounceTimeout] = useState(null)
 
     const [loading, setLoading] = useState(false)
 
@@ -170,15 +169,12 @@ const MarketWatch = () => {
 
 
                             </div>
-
-                            {/* <button className="swap__button">Swap</button> */}
                             
                         </div>
 
-
                     </div>
+                </div>
             </div>
-        </div>
         <Reviews />
     </section>
   )
