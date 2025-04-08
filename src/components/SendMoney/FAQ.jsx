@@ -18,17 +18,17 @@ const FAQ = () => {
                 </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">LemFi provides global financial services to immigrants. LemFi is available in Canada, Europe, the United Kingdom and the United States. We are expanding to more countries with tailored services soon and we will keep you informed.</div>
+                <div class="accordion-body">Mustard provides global financial services to immigrants. Mustard is available in Canada, Europe, the United Kingdom and the United States. We are expanding to more countries with tailored services soon and we will keep you informed.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    What is spot trading
+                    How does Mustard work ?
                 </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Spot trading is the buying and selling of assets at their current markett price.</div>
+                <div class="accordion-body">Download the Mustard app on your Android or iPhone mobile device and sign up for free. Verify your identity and add money into your Mustard account by topping up via your card or bank account. Choose your destination country and currency. Enter your recipient's details and approve the payment instruction. Learn more</div>
                 </div>
             </div>
             <div class="accordion-item">
