@@ -1,8 +1,8 @@
-import {useEffect, useRef} from "react";
-import MarketTable from "../MarketTable";
-import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
+import {useEffect} from "react";
+// import MarketTable from "../MarketTable";
+// import { useGetLiveQuery } from '../../features/stocksList/stocksListApiSlice';
 import Reviews from "../Reviews/Reviews";
-import { CurrencyIcon } from "../../utils/Currency";
+// import { CurrencyIcon } from "../../utils/Currency";
 import "./MarketWatch.css"
 import axios from "axios";
 import { useState } from "react";
@@ -13,7 +13,7 @@ const MarketWatch = () => {
 
     // const currencyArray = ["AUDCAD", "EURGBP", "NGNUSD", "EURUSD", "GBPUSD"]
 
-    const timerId = useRef();
+    // const timerId = useRef();
 
 
     const currencyArray = [
@@ -190,7 +190,7 @@ const MarketWatch = () => {
 
                                 <div 
                                     className="form-control currency__amount__input"
-                                >{exchangeValue ? exchangeValue : "Value"}</div>
+                                >{loading ? "Loading..." : exchangeValue ? exchangeValue : "Value"}</div>
 
 
                             </div>
