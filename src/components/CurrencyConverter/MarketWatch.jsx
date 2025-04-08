@@ -9,11 +9,6 @@ import useDebounce from "../../hooks/useDebounce";
 const MarketWatch = () => {
 
 
-    
-
-    
-
-
     const currencyArray = [
         { symbol: "USD", img:`\u0024` },
         { symbol: "JPY", img:`\u00A5` },
@@ -118,13 +113,13 @@ const MarketWatch = () => {
                                         required 
                                         value={from}  
                                     >
-                                        <option value="USD">USD</option>
+                                        <option value="USD">USD \u0024</option>
 
                                         {currencyArray
                                             .filter((currency) => currency.symbol !== "USD") // Exclude USD from the array
                                             .map((currency, i) => (
                                                 <option key={i} value={currency.symbol} data-icon={currency.img}>
-                                                {currency.symbol}
+                                                {currency.symbol} {currency.img}
                                             </option>
                                         ))}
                                     </select>
@@ -151,13 +146,13 @@ const MarketWatch = () => {
                                         required
                                         value={to}  
                                     >
-                                        <option value="NGN">NGN</option>
+                                        <option value="NGN">NGN \u20A6</option>
 
                                         {currencyArray
                                             .filter((currency) => currency.symbol !== "NGN") // Exclude NGN from the array
                                             .map((currency, i) => (
                                                 <option key={i} value={currency.symbol} data-icon={currency.img}>
-                                                    {currency.symbol}
+                                                    {currency.symbol} {currency.img}
                                                 </option>
                                             ))}
                                     </select>
