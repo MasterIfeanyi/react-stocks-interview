@@ -13,3 +13,17 @@
     justify-content: flex-start;
     border-radius: 18px;
 }
+
+.outer-shell .inner__heading {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 8px 28px;
+    background-color: var(--brand);
+    border-color: var(--brand);
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+}

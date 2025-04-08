@@ -1,0 +1,39 @@
+/* Remove the Bootstrap blue hue and default styling */
+.accordion {
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: inherit;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-btn-focus-border-color: #dee2e6;
+    --bs-accordion-border-color: #dee2e6;
+}
+  
+
+.accordion .accordion-item {
+    margin-bottom: 20px;
+}
+
+
+/* Style the accordion buttons */
+.accordion .accordion-button {
+    background-color: transparent;
+    color: #212529;
+    box-shadow: none;
+}
+  
+.accordion .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: #212529;
+    box-shadow: none;
+}
+  
+/* Remove the blue focus outline */
+.accordion .accordion-button:focus {
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
+
+/* Style the accordion body */
+.accordion .accordion-body {
+    background-color: #ffffff;
+}

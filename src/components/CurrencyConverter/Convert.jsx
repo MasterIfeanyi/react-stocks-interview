@@ -90,7 +90,7 @@ const Convert = () => {
                 </div>
 
 
-                    <div className="col-lg-6">
+                <div className="col-lg-6">
 
                         <div className="outer-shell">
                             <div className="inner__heading">
@@ -127,8 +127,6 @@ const Convert = () => {
                                     className="form-control currency__amount__input"
                                     placeholder="Enter Amount"
                                 />
-
-
                             </div>
 
                             <div className="currency__converter">
@@ -155,15 +153,11 @@ const Convert = () => {
                                 <div 
                                     className="form-control currency__amount__input"
                                 >{loading ? "Loading..." : exchangeValue ? exchangeValue : "Value"}</div>
-
-
-                            </div>
-                            
-                        </div>
-
+                        </div>      
                     </div>
                 </div>
             </div>
+        </div>
         <Reviews />
     </section>
   )
