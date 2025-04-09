@@ -111,6 +111,23 @@ const SendMoney = () => {
                                 </label> */}
                                 <input 
                                     type="number" 
+                                    name="accountNumber" 
+                                    id=""
+                                    placeholder="Enter Recipient Account Number"
+                                    className="amount__input"
+                                    required
+                                    value={formData.accountNumber} 
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+
+                            <div className="amount">
+                                {/* <label htmlFor="recipientBank" className="form-label">
+                                    Enter Amount
+                                </label> */}
+                                <input 
+                                    type="number" 
                                     name="amount" 
                                     id=""
                                     placeholder="Enter Amount"
@@ -121,22 +138,18 @@ const SendMoney = () => {
                                 />
                             </div>
 
+                            <div className="narration">
+                                <textarea className="narration__textshell" name="" id=""></textarea>
+                            </div>
 
-
-
+                            <div className="send__button__container">
+                                <button className="send__button">Pay with Google</button>
+                            </div>
 
 
                         </div>
-
-
-
-
-
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
