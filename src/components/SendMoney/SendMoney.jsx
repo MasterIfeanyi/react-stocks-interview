@@ -8,6 +8,30 @@ import "./Send.css"
 const SendMoney = () => {
 
 
+    const banks = [
+        { name: "Access Bank", code: "044" },
+        { name: "First Bank", code: "011" },
+        { name: "GTBank", code: "058" },
+        { name: "UBA", code: "033" },
+        { name: "Zenith Bank", code: "057" },
+    ]
+
+    const [formData, setFormData] = useState({
+        amount: '',
+        bankCode: '',
+        accountNumber: '',
+        narration: '',
+        pin: '' // User's transaction PIN
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value
+        });
+    }; 
+
+
     // const renderProgressIndicator = () => {
     //     const steps = ["Amount", "Recipient", "Review", "Complete"]
     
@@ -47,8 +71,37 @@ const SendMoney = () => {
                 <div className="col-lg-6">
                     <div className="outer-shell">
                         <div className="inner__heading">
-                            <h4 className="inner__heading-text">Zend It</h4>
+                            <h4 className="inner__heading-text">Xender</h4>
                         </div>
+
+
+                        <div className="transfer__form">
+                            <div className="dropdown">
+                                <label htmlFor="recipientBank" className="form-label">
+                                    Recipient Bank
+                                </label>
+                                <select 
+                                    className="select-tag" 
+                                    onChange={handleSelectTo}
+                                    aria-label="enter recipient bank"
+                                    required
+                                    value={to}  
+                                >
+                                    <option value="">Select Bank</option>
+
+                                    {banks.map((bank) => (
+                                            <option key={bank.code} value={bank.code}>
+                                                {bank.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
                     </div>
                 </div>
 

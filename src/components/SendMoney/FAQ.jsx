@@ -7,7 +7,7 @@ const FAQ = () => {
     
   return (
     <div class="container">
-        <div class="intro-header">
+        <div class="intro-header my-5">
             <h3 className='text-center'>FREQUENTLY ASKED QUESTIONS</h3>
         </div>
         <div class="accordion accordion-flush" id="accordionFlushExample">
