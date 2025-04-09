@@ -1,7 +1,7 @@
 import React from "react"
 import FAQ from "./FAQ"
 import "./Send.css"
-
+import { useState } from "react"
 
 
 
@@ -31,6 +31,11 @@ const SendMoney = () => {
         });
     }; 
 
+    const [selectBank, setSelectBank] = useState("")
+
+    const handleBankChange = (e) => {
+        setSelectBank(e.target.value)
+    }
 
     // const renderProgressIndicator = () => {
     //     const steps = ["Amount", "Recipient", "Review", "Complete"]
@@ -81,17 +86,18 @@ const SendMoney = () => {
                                     Recipient Bank
                                 </label>
                                 <select 
+                                    name="bankCode"
                                     className="select-tag" 
-                                    onChange={handleSelectTo}
+                                    onChange={handleChange}
                                     aria-label="enter recipient bank"
                                     required
-                                    value={to}  
+                                    value={formData.bankCode}  
                                 >
                                     <option value="">Select Bank</option>
 
                                     {banks.map((bank) => (
-                                            <option key={bank.code} value={bank.code}>
-                                                {bank.name}
+                                        <option key={bank.code} value={bank.code}>
+                                            {bank.name}
                                         </option>
                                     ))}
                                 </select>
