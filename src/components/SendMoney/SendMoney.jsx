@@ -82,9 +82,9 @@ const SendMoney = () => {
 
                         <div className="transfer__form">
                             <div className="dropdown">
-                                <label htmlFor="recipientBank" className="form-label">
+                                {/* <label htmlFor="recipientBank" className="form-label">
                                     Recipient Bank
-                                </label>
+                                </label> */}
                                 <select 
                                     name="bankCode"
                                     className="select-tag" 
@@ -102,6 +102,30 @@ const SendMoney = () => {
                                     ))}
                                 </select>
                             </div>
+
+
+
+                            <div className="amount">
+                                {/* <label htmlFor="recipientBank" className="form-label">
+                                    Enter Amount
+                                </label> */}
+                                <input 
+                                    type="number" 
+                                    name="amount" 
+                                    id=""
+                                    placeholder="Enter Amount"
+                                    className="amount__input"
+                                    required
+                                    value={formData.amount} 
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+
+
+
+
+
                         </div>
 
 
