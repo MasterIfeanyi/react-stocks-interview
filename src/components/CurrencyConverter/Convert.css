@@ -235,3 +235,9 @@ select img {
 .currency__amount__input:hover {
   border-color: #d1d5db;
 }
+
+@media (max-width: 768px) {
+  .custom__mt {
+    margin-top: 2rem !important;
+  }
+}
