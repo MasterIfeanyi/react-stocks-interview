@@ -93,7 +93,7 @@ const SendMoney = () => {
                                     required
                                     value={formData.bankCode}  
                                 >
-                                    <option value="">Select Bank</option>
+                                    <option value="" disabled>Select Bank</option>
 
                                     {banks.map((bank) => (
                                         <option key={bank.code} value={bank.code}>
@@ -139,7 +139,7 @@ const SendMoney = () => {
                             </div>
 
                             <div className="narration">
-                                <textarea className="narration__textshell" name="" id=""></textarea>
+                                <textarea className="narration__textshell" name="" placeholder="Narration" />
                             </div>
 
                             <div className="send__button__container">
