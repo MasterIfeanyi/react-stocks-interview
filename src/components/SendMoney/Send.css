@@ -25,6 +25,12 @@
 }
 
 
+.inner__heading-text {
+    color: var(--brand);
+    text-align: center;
+    font-size: 2rem;
+}
+
 .transfer__form {
     background-color: white;
     width: 100%;

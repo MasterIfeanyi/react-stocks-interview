@@ -75,9 +75,9 @@ const SendMoney = () => {
 
                 <div className="col-lg-6 custom__mt">
                     <div className="outer-shell">
-                        <div className="inner__heading">
-                            <h4 className="inner__heading-text">Xender</h4>
-                        </div>
+                        <h4 className="inner__heading-text">Xender</h4>
+                        {/* <div className="inner__heading">
+                        </div> */}
 
 
                         <div className="transfer__form">
