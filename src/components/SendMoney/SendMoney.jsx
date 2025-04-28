@@ -2,11 +2,16 @@ import React from "react"
 import FAQ from "./FAQ"
 import "./Send.css"
 import { useState } from "react"
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 
 
 const SendMoney = () => {
 
+
+
+
+    
 
     const banks = [
         { name: "Access Bank", code: "044" },
@@ -19,10 +24,24 @@ const SendMoney = () => {
     const [formData, setFormData] = useState({
         amount: '',
         bankCode: '',
-        accountNumber: '',
+        phoneNumber: '',
         narration: '',
         pin: '' // User's transaction PIN
     });
+
+
+    const config = {
+        tx_ref: Date.now(),
+        amount: formData.amount,
+        currency: "NGN",
+        payment_options: 'card,mobilemoney,ussd,googlepay',
+        customer: {
+            email: 'user@gmail.com',
+            phone_number: formData.phoneNumber,
+            name: 'john doe',
+        },
+    }
+
 
     const handleChange = (e) => {
         setFormData({
@@ -111,12 +130,12 @@ const SendMoney = () => {
                                 </label> */}
                                 <input 
                                     type="number" 
-                                    name="accountNumber" 
+                                    name="phoneNumber" 
                                     id=""
-                                    placeholder="Enter Recipient Account Number"
+                                    placeholder="Enter Your Phone Number"
                                     className="amount__input"
                                     required
-                                    value={formData.accountNumber} 
+                                    value={formData.phoneNumber} 
                                     onChange={handleChange}
                                 />
                             </div>

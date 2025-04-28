@@ -93,7 +93,7 @@ const Convert = () => {
                 <div className="col-lg-6 custom__mt">
                         <div className="outer-shell">
                             <div className="inner__heading">
-                                <h4 className="inner__heading-text">Swap</h4>
+                                <h4 className="inner__heading-text" style={{color: "white"}}>Swap</h4>
                             </div>
 
                             <div className="currency__converter">
