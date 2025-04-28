@@ -26,7 +26,8 @@ const SendMoney = () => {
         bankCode: '',
         phoneNumber: '',
         narration: '',
-        pin: '' // User's transaction PIN
+        name:'',
+        email: ''
     });
 
 
@@ -36,9 +37,9 @@ const SendMoney = () => {
         currency: "NGN",
         payment_options: 'card,mobilemoney,ussd,googlepay',
         customer: {
-            email: 'user@gmail.com',
+            email: formData.email,
             phone_number: formData.phoneNumber,
-            name: 'john doe',
+            narration: formData.narration,
         },
     }
 
@@ -78,6 +79,7 @@ const SendMoney = () => {
     //     )
     // }
 
+    const handleFlutterPayment = useFlutterwave(config);
 
   return (
     <section className='section'>
@@ -100,10 +102,10 @@ const SendMoney = () => {
 
 
                         <div className="transfer__form">
-                            <div className="dropdown">
-                                {/* <label htmlFor="recipientBank" className="form-label">
+                            {/* <div className="dropdown">
+                                <label htmlFor="recipientBank" className="form-label">
                                     Recipient Bank
-                                </label> */}
+                                </label>
                                 <select 
                                     name="bankCode"
                                     className="select-tag" 
@@ -120,8 +122,20 @@ const SendMoney = () => {
                                         </option>
                                     ))}
                                 </select>
-                            </div>
+                            </div> */}
 
+                            <div className="amount">
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    placeholder="Enter Your Name"
+                                    id="" 
+                                    className="amount__input"
+                                    required
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                />
+                            </div>
 
 
                             <div className="amount">
@@ -129,13 +143,13 @@ const SendMoney = () => {
                                     Enter Amount
                                 </label> */}
                                 <input 
-                                    type="number" 
-                                    name="phoneNumber" 
+                                    type="email" 
+                                    name="email" 
                                     id=""
-                                    placeholder="Enter Your Phone Number"
+                                    placeholder="Enter Your Email"
                                     className="amount__input"
                                     required
-                                    value={formData.phoneNumber} 
+                                    value={formData.email} 
                                     onChange={handleChange}
                                 />
                             </div>
@@ -162,7 +176,19 @@ const SendMoney = () => {
                             </div>
 
                             <div className="send__button__container">
-                                <button className="send__button">Pay with Google</button>
+                                <button 
+                                    className="send__button"
+                                    onClick={() => {
+                                        handleFlutterPayment({
+                                            callback: (response) => {
+                                               console.log(response);
+                                                closePaymentModal()
+                                            },
+                                            onClose: () => {},
+                                        })
+                                    }}>
+                                    Pay with Google
+                                </button>
                             </div>
 
 
