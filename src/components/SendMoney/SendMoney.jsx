@@ -32,6 +32,7 @@ const SendMoney = () => {
 
 
     const config = {
+        public_key: process.env.REACT_APP_FLW_PUBLIC_KEY,
         tx_ref: Date.now(),
         amount: formData.amount,
         currency: "NGN",
@@ -41,6 +42,10 @@ const SendMoney = () => {
             phone_number: formData.phoneNumber,
             narration: formData.narration,
         },
+        customizations: {
+            title: "Payment Page",
+            description: "Choose your preferred payment method"
+        }
     }
 
 
@@ -80,6 +85,8 @@ const SendMoney = () => {
     // }
 
     const handleFlutterPayment = useFlutterwave(config);
+
+    
 
   return (
     <section className='section'>
