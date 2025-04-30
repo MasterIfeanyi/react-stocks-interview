@@ -1,0 +1,62 @@
+/* Submit Page */
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f8f9fa;
+  }
+  
+  .back-arrow {
+    margin: 50px 0px 0px 30px;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: start;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkmark-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+  
+  .checkmark {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .checkmark-circle circle {
+    stroke: none;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+  }
+  
+  .checkmark-check {
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    animation: checkmark 0.5s ease-in-out 0.3s forwards;
+  }
+  
+  @keyframes checkmark {
+    0% {
+      stroke-dasharray: 50px 50px;
+      stroke-dashoffset: 50px;
+    }
+    100% {
+      stroke-dasharray: 50px 50px;
+      stroke-dashoffset: 0;
+    }
+  }

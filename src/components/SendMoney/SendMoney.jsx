@@ -45,7 +45,10 @@ const SendMoney = () => {
         customizations: {
             title: "Payment Page",
             description: "Choose your preferred payment method"
-        }
+        },
+        callback: (response) => {
+            closePaymentModal();
+        },
     }
 
 
@@ -86,7 +89,7 @@ const SendMoney = () => {
 
     const handleFlutterPayment = useFlutterwave(config);
 
-    
+
 
   return (
     <section className='section'>
