@@ -9,10 +9,6 @@ import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 const SendMoney = () => {
 
 
-
-
-    
-
     const banks = [
         { name: "Access Bank", code: "044" },
         { name: "First Bank", code: "011" },
@@ -36,7 +32,7 @@ const SendMoney = () => {
         tx_ref: Date.now(),
         amount: formData.amount,
         currency: "NGN",
-        payment_options: 'card,mobilemoney,ussd,googlepay',
+        payment_options: 'card,banktransfer,mobilemoney,ussd,googlepay',
         customer: {
             email: formData.email,
             phone_number: formData.phoneNumber,
@@ -88,6 +84,14 @@ const SendMoney = () => {
     // }
 
     const handleFlutterPayment = useFlutterwave(config);
+
+    // {
+    //     callback: (response) => {
+    //        console.log(response);
+    //         closePaymentModal()
+    //     },
+    //     onClose: () => {},
+    // }
 
 
 
@@ -189,13 +193,7 @@ const SendMoney = () => {
                                 <button 
                                     className="send__button"
                                     onClick={() => {
-                                        handleFlutterPayment({
-                                            callback: (response) => {
-                                               console.log(response);
-                                                closePaymentModal()
-                                            },
-                                            onClose: () => {},
-                                        })
+                                        handleFlutterPayment()
                                     }}>
                                     Pay with Google
                                 </button>
