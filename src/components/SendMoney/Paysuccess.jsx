@@ -7,6 +7,10 @@ const Paysuccess = () => {
 
     const navigate = useNavigate() 
 
+    const handleBackClick = () => {
+        navigate(-1)
+    }
+
   return (
     <div className='submit'>
         <FontAwesomeIcon className="back-arrow" onClick={handleBackClick} icon={faArrowLeft} />

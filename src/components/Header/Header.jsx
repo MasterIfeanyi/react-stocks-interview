@@ -20,21 +20,18 @@ const Header = () => {
 
 
                 <div className="collapse navbar-collapse" id="navmenu">
-                    <ul className="navbar-nav mx-auto">          
+                    <ul className="navbar-nav ms-auto">          
                         <li className="nav-item">
                             <Link to="/" className="nav-link">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="send" className="nav-link">Send</Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link to="/" className="nav-link">Rewards</Link>
-                        </li> */}
                     </ul>
 
 
                     {/* <a href="#login" className=""><i className="ri ri-lock-unlock-fill"></i> Login</a> */}
-                    <a href="#get-started" className="btn btn-brand ms-3">Getting Started <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
+                    {/* <a href="#get-started" className="btn btn-brand ms-3">Getting Started <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a> */}
                 </div>
             </div>
         </nav>
