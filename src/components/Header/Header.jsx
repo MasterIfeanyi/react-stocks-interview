@@ -28,10 +28,6 @@ const Header = () => {
                             <Link to="send" className="nav-link">Send</Link>
                         </li>
                     </ul>
-
-
-                    {/* <a href="#login" className=""><i className="ri ri-lock-unlock-fill"></i> Login</a> */}
-                    {/* <a href="#get-started" className="btn btn-brand ms-3">Getting Started <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a> */}
                 </div>
             </div>
         </nav>
