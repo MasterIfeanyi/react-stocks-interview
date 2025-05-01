@@ -1,9 +1,9 @@
-import Content from './components/Content';
+// import Content from './components/Content';
+// import MarketWatch from './components/CurrencyConverter/MarketWatch';
 import SendMoney from './components/SendMoney/SendMoney';
 import Convert from './components/CurrencyConverter/Convert';
 import {Routes, Route, Navigate} from "react-router-dom"
 import Layout from './Layout/Layout';
-import MarketWatch from './components/CurrencyConverter/MarketWatch';
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
