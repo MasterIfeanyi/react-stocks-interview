@@ -9,13 +9,17 @@ import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 const SendMoney = () => {
 
 
-    // const banks = [
-    //     { name: "Access Bank", code: "044" },
-    //     { name: "First Bank", code: "011" },
-    //     { name: "GTBank", code: "058" },
-    //     { name: "UBA", code: "033" },
-    //     { name: "Zenith Bank", code: "057" },
-    // ]
+    
+
+    const validateForm = () => {
+        for (let key in formData) {
+            if (!formData[key]?.trim()) {
+                alert(`Please fill in the ${key} field.`);
+                return false;
+            }
+        }
+        return true;
+    };
 
     const [showTestCardModal, setShowTestCardModal] = useState(false);
 
@@ -57,38 +61,16 @@ const SendMoney = () => {
         });
     }; 
 
-    // const [selectBank, setSelectBank] = useState("")
-
-    // const handleBankChange = (e) => {
-    //     setSelectBank(e.target.value)
-    // }
-
-    // const renderProgressIndicator = () => {
-    //     const steps = ["Amount", "Recipient", "Review", "Complete"]
     
-    //     return (
-    //       <div className="progress-indicator">
-    //         {steps.map((step, index) => (
-    //           <React.Fragment key={index}>
-    //             <div
-    //               className={`step ${currentStep > index + 1 ? "completed" : ""} ${currentStep === index + 1 ? "active" : ""}`}
-    //             >
-    //               <div className="step-circle">{currentStep > index + 1 ? "✓" : index + 1}</div>
-    //               <div className="step-label">{step}</div>
-    //             </div>
-    //             {index < steps.length - 1 && (
-    //               <div className={`step-connector ${currentStep > index + 1 ? "completed" : ""}`}></div>
-    //             )}
-    //           </React.Fragment>
-    //         ))}
-    //       </div>
-    //     )
-    // }
 
+    
     const handleFlutterPayment = useFlutterwave(config);
 
     
     const proceedToPayment = () => {
+
+        if (!validateForm()) return;
+
         setShowTestCardModal(false);
         handleFlutterPayment({
           callback: (response) => {
@@ -99,15 +81,7 @@ const SendMoney = () => {
         });
     };
 
-    // () => {
-    //     handleFlutterPayment({
-    //         callback: (response) => {
-    //             console.log(response);
-    //             closePaymentModal()
-    //         },
-    //         onClose: () => {},
-    //     })
-    // }
+    
 
   return (
     <section className='section'>
@@ -125,32 +99,11 @@ const SendMoney = () => {
                 <div className="col-lg-6 custom__mt">
                     <div className="outer-shell">
                         <h4 className="inner__heading-text">Xender</h4>
-                        {/* <div className="inner__heading">
-                        </div> */}
+                        
 
 
                         <div className="transfer__form">
-                            {/* <div className="dropdown">
-                                <label htmlFor="recipientBank" className="form-label">
-                                    Recipient Bank
-                                </label>
-                                <select 
-                                    name="bankCode"
-                                    className="select-tag" 
-                                    onChange={handleChange}
-                                    aria-label="enter recipient bank"
-                                    required
-                                    value={formData.bankCode}  
-                                >
-                                    <option value="" disabled>Select Bank</option>
-
-                                    {banks.map((bank) => (
-                                        <option key={bank.code} value={bank.code}>
-                                            {bank.name}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div> */}
+                            
 
                             <div className="amount">
                                 <input 
@@ -167,9 +120,7 @@ const SendMoney = () => {
 
 
                             <div className="amount">
-                                {/* <label htmlFor="recipientBank" className="form-label">
-                                    Enter Amount
-                                </label> */}
+                                
                                 <input 
                                     type="email" 
                                     name="email" 
@@ -184,9 +135,7 @@ const SendMoney = () => {
 
 
                             <div className="amount">
-                                {/* <label htmlFor="recipientBank" className="form-label">
-                                    Enter Amount
-                                </label> */}
+                                
                                 <input 
                                     type="number" 
                                     name="amount" 
