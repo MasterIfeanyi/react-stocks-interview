@@ -34,8 +34,8 @@ function App() {
 
       <Layout>
         <Routes>
-          <Route path='/' element={<Convert />} />
-          <Route path="send" element={<SendMoney />} />
+          <Route path='/' element={<SendMoney />} />
+          <Route path="convert" element={<Convert />} />
           {/* catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
