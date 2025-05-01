@@ -1,5 +1,6 @@
 import React from "react"
 import FAQ from "./FAQ"
+import { toast } from "react-toastify"
 import "./Send.css"
 import { useState } from "react"
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
@@ -14,7 +15,10 @@ const SendMoney = () => {
     const validateForm = () => {
         for (let key in formData) {
             if (!formData[key]?.trim()) {
-                alert(`Please fill in the ${key} field.`);
+                toast.error(`Please fill in the ${key} field.`, {
+                    position: "top-right",
+                    autoClose: 3000
+                });
                 return false;
             }
         }

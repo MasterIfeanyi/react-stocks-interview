@@ -11,6 +11,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import 'owl.carousel/dist/owl.carousel.js';
 import 'owl.carousel';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import { BrowserRouter } from 'react-router-dom';
 
