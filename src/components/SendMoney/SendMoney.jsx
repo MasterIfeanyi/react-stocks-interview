@@ -200,7 +200,14 @@ const SendMoney = () => {
                             </div>
 
                             <div className="narration">
-                                <textarea className="narration__textshell" name="" placeholder="Narration" />
+                                <textarea 
+                                    className="narration__textshell" 
+                                    name="narration" 
+                                    placeholder="Narration" 
+                                    required
+                                    value={formData.narration}
+                                    onChange={handleChange}
+                                />
                             </div>
 
                             <div className="send__button__container">
