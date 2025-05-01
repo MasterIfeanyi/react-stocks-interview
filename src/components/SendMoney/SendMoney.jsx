@@ -28,12 +28,12 @@ const SendMoney = () => {
     const [showTestCardModal, setShowTestCardModal] = useState(false);
 
     const [formData, setFormData] = useState({
+        name:'',
+        email: '',
         amount: '',
         bankCode: '',
         phoneNumber: '',
         narration: '',
-        name:'',
-        email: ''
     });
 
 
