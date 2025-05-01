@@ -57,11 +57,11 @@ const SendMoney = () => {
         });
     }; 
 
-    const [selectBank, setSelectBank] = useState("")
+    // const [selectBank, setSelectBank] = useState("")
 
-    const handleBankChange = (e) => {
-        setSelectBank(e.target.value)
-    }
+    // const handleBankChange = (e) => {
+    //     setSelectBank(e.target.value)
+    // }
 
     // const renderProgressIndicator = () => {
     //     const steps = ["Amount", "Recipient", "Review", "Complete"]
