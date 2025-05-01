@@ -93,7 +93,7 @@ const SendMoney = () => {
             <div className="row align-items-center">
                 <div className="col-lg-5">
                     <div>
-                        <h1 className="hero-title">Send Money</h1>
+                        <h1 className="hero-title">Send Money <img style={{width: "25px", height: "25px"}} src="./97.svg" /></h1>
                         <p className="">Distance is not a barrier at all</p>
                     </div>
                 </div>
