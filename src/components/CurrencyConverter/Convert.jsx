@@ -84,7 +84,7 @@ const Convert = () => {
             <div className="row align-items-center">
                 <div className="col-lg-5">
                     <div>
-                        <h1 className="hero-title">Currency Converter</h1>
+                        <h1 className="hero-title">Currency Converter <img style={{width: "43px", height: "43px"}} src="./currency-converter-icon.png" /> </h1>
                         <p className="">Get the best rates in the market</p>
                     </div>
                 </div>
