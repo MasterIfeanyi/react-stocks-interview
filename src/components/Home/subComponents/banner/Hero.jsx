@@ -16,10 +16,10 @@ const Hero = () => {
                     <p className="my-4 fs-4">Join over 4000 customers achieve their financial goals through savings and investments.</p>
                     
                     <div className="my-5">
-                        <a href="#get-started" className="btn btn-brand ms-3">Create free account <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
+                        <a href="#get-started" className="btn btn-brand create-btn ms-3">Create free account <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
                     </div>
 
-                    <small className="fs-6" style={{fontWeight: "500"}}>Already using Mustard.ng? <a href="">Login</a></small>
+                    <small className="fs-6 login" style={{fontWeight: "500"}}>Already using Mustard.ng? <a href="">Login</a></small>
 
                 </div>
 

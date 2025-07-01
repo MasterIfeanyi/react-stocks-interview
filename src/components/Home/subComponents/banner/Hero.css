@@ -1,3 +1,7 @@
+.login > a {
+    text-decoration: none;
+}
+
 .banner-image {
     position: relative;
     z-index: 2;
@@ -68,4 +72,106 @@
     border-bottom: 1px solid #efefef;
     max-width: 100%;
     margin: 40px auto;
+}
+
+
+/* Invest */
+.invest {
+    padding: 80px 80px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.invest p {
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.invest h6 {
+    font-size: 20px;
+    color: grey;
+    color: rgba(0, 0, 0, 0.3);
+    padding: 20px 0;
+}
+
+
+.invest:hover{
+    border: 2px solid black;
+}
+
+.story p {
+    line-height: 1.4;
+    color: var(--grey);
+    font-size: 1.3rem;
+    margin: 32px 0px;
+    font-weight: 500;
+}
+
+/* .story-header {
+    border-image: url("./images/line-shape-2.svg") 100% 25 25 stretch;
+} */
+
+.container .header-text {
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.header-text span {
+    color: var(--brand);
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.619);
+    color: black;
+    border-radius: 500px;
+}
+
+.cta-padding {
+    padding: 80px;
+}
+
+.cta-padding h6 {
+    text-transform: uppercase;
+    margin: 12px 0px;
+    color: var(--grey);
+}
+
+
+.fairmoney-parent {
+    position: relative;
+    z-index: 2;
+}
+
+.fairmoney{
+    width: 500px;
+    max-width: calc(100% - 10px);
+    background-color: #6936F5;
+}
+
+.background1{
+    position: absolute;
+    width: 460px;
+    max-width: calc(98% - 10px);
+    background-color: #4a0586;
+    height: 40px;
+    z-index: -1;
+    bottom: -10%;
+    left: 29%;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 1000px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.125rem;
+}
+
+.container .create-btn:hover {
+    background-color: black;
+    color: white;
 }
