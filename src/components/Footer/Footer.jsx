@@ -27,7 +27,7 @@ const Foter = () => {
                         <h4>Contact Info</h4>
                         <ul>
                             <li className="nav-item"><Link to="/" className="no-underline nav-link">Phone: +999-000-9090</Link></li>
-                            <li className="nav-item"><Link to="/" className="no-underline nav-link">Email: hi@mustard.ng</Link></li>
+                            <li className="nav-item"><Link to="/" className="no-underline nav-link">hi@mustard.ng</Link></li>
                         </ul>
                     </div>
 
