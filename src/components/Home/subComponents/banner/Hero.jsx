@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Hero.css"
 
 const Hero = () => {
@@ -19,7 +20,7 @@ const Hero = () => {
                         <a href="#get-started" className="btn btn-brand create-btn ms-3">Create free account <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
                     </div>
 
-                    <small className="fs-6 login" style={{fontWeight: "500"}}>Already using Mustard.ng? <a href="#">Login</a></small>
+                    <small className="fs-6 login" style={{fontWeight: "500"}}>Already using Mustard.ng? <Link to="">Login</Link></small>
 
                 </div>
 
