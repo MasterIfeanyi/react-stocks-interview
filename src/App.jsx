@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import {Routes, Route, Navigate} from "react-router-dom"
 import Layout from './Layout/Layout';
 import $ from 'jquery';
+import Index from './components/Home/Index';
 window.$ = window.jQuery = $;
 
 
@@ -34,7 +35,8 @@ function App() {
 
       <Layout>
         <Routes>
-          <Route path='/' element={<SendMoney />} />
+          <Route path='/' element={<Index />} />
+          <Route path='send' element={<SendMoney />} />
           <Route path="convert" element={<Convert />} />
           {/* catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />
