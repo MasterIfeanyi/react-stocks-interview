@@ -19,7 +19,7 @@ const Hero = () => {
                         <a href="#get-started" className="btn btn-brand create-btn ms-3">Create free account <i style={{verticalAlign: "inherit"}} className="ri ri-arrow-right-line"></i></a>
                     </div>
 
-                    <small className="fs-6 login" style={{fontWeight: "500"}}>Already using Mustard.ng? <a href="">Login</a></small>
+                    <small className="fs-6 login" style={{fontWeight: "500"}}>Already using Mustard.ng? <a>Login</a></small>
 
                 </div>
 
@@ -28,7 +28,7 @@ const Hero = () => {
             {/* CTA */}
             <div className="row my-5">
                 <div className="col-12">
-                    <img src="./images/ils_09.svg" className="img-fluid" alt="banner-image" />
+                    <img src="./images/ils_09.svg" className="img-fluid" />
                 </div>
             </div>
         </div>

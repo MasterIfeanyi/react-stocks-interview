@@ -4,8 +4,8 @@ const Account = () => {
 
   return (
     <section>
-        <div class="container cta-container">
-            <div class="row cta-padding" style={{backgroundColor: "black", color: "white"}}>
+        <div class="container">
+            <div class="row cta-container cta-padding" style={{backgroundColor: "#212529", color: "white"}}>
                 <div class="col-lg-6">
                     <h6>Ready, set...go!</h6>
                     <h1 class="fs-2">Plan for your future <span>now !</span></h1>
