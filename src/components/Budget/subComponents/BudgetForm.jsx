@@ -1,13 +1,18 @@
 import {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope, faLock, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope, faLock, faEye, faEyeSlash, faCalendar } from "@fortawesome/free-solid-svg-icons"
+
 
 const BudgetForm = () => {
 
   const [name, setName] = useState("")
   const [amount, setAmount] = useState(0)
   const [date, setDate] = useState("")
+  const [category, setCategory] = useState("")
 
+  const handleSubmit = () => {
+
+  }
 
 
   return (
@@ -45,7 +50,6 @@ const BudgetForm = () => {
 
 
       <div className="input-group custom-input-group">
-
         <span className="input-group-text bg-white border-end-0">
           <FontAwesomeIcon icon={faCalendar} />
         </span>
@@ -63,15 +67,12 @@ const BudgetForm = () => {
 
 
       <div className="input-group custom-input-group">
-        <label htmlFor="category" className="form-label">
-          Category
-        </label>
         <select
           className="form-select"
           id="category"
           name="category"
-          value={formData.category}
-          onChange={handleInputChange}
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
         >
           <option value="">Select category</option>
           <option value="food">Food</option>

@@ -2,6 +2,10 @@
 // import MarketWatch from './components/CurrencyConverter/MarketWatch';
 import SendMoney from './components/SendMoney/SendMoney';
 import Convert from './components/CurrencyConverter/Convert';
+import Budget from './components/Budget/Budget';
+
+
+
 import { ToastContainer } from 'react-toastify';
 import {Routes, Route, Navigate} from "react-router-dom"
 import Layout from './Layout/Layout';
@@ -38,6 +42,7 @@ function App() {
           <Route path='/' element={<Index />} />
           <Route path='send' element={<SendMoney />} />
           <Route path="convert" element={<Convert />} />
+          <Route path='budget' element={<Budget />} />
           {/* catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

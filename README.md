@@ -168,6 +168,23 @@ export const apiSlice = createApi({
 })
 ```
 
+### Problem 6:
+
+what is the cause and solution ?
+
+```javascript
+Error: Can't resolve '@fortawesome/free-solid-svg-icons' in 
+
+Error: Can't resolve '@fortawesome/react-fontawesome' in
+```
+
+**Solution**
+
+```npm install @fortawesome/free-solid-svg-icons```
+
+```npm install @fortawesome/react-fontawesome```
+
+
 ## The API used
 
 I used three different API to fetch data because of the lack of a single API that could offer all forms of data required to build this app.
