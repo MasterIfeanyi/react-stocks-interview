@@ -18,7 +18,7 @@ const BudgetForm = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} className='row g-3'>
+    <form onSubmit={handleSubmit} className='row g-3 custom-form'>
 
       <div className="input-group custom-input-group">
 
@@ -79,8 +79,8 @@ const BudgetForm = () => {
         </select>
       </div>
 
-      <div className='w-100 custom-btn-group'>
-        <button type="submit" className="btn btn-brand w-100">
+      <div className=''>
+        <button type="submit" className="btn btn-brand w-100 create-btn">
           Add Entry
         </button>
       </div>

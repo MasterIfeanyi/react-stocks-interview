@@ -1,4 +1,4 @@
-import BudgetForm from "./subComponents/BudgetForm"
+import BudgetForm from "./subComponents/Form/BudgetForm"
 
 const Budget = () => {
 

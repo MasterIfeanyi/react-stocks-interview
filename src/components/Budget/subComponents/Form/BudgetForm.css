@@ -31,7 +31,7 @@
     border-color: #212529;
 }
 
-.custom-btn-group .btn-brand:hover {
-    background-color: var(--brand);
+.custom-form .btn-brand:hover {
+    background-color: black;
     color: white;
 }
