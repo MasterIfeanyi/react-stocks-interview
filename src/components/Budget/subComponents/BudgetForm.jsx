@@ -2,6 +2,8 @@ import {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope, faLock, faEye, faEyeSlash, faCalendar } from "@fortawesome/free-solid-svg-icons"
 
+import "./BudgetForm.css"
+
 
 const BudgetForm = () => {
 
@@ -16,17 +18,14 @@ const BudgetForm = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} className='row g-3 px-3'>
+    <form onSubmit={handleSubmit} className='row g-3'>
 
       <div className="input-group custom-input-group">
-        <span className="input-group-text bg-white border-end-0">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </span>
 
         <input
           type="text"
-          className="form-control border-start-0"
-          placeholder="Enter your Name"
+          className="form-control"
+          placeholder="Title"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -34,13 +33,11 @@ const BudgetForm = () => {
 
 
       <div className="input-group custom-input-group">
-        <span className="input-group-text bg-white border-end-0">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </span>
+        
 
         <input
           type="number"
-          className="form-control border-start-0"
+          className="form-control"
           placeholder="Price"
           min="0"
           value={amount}
@@ -50,13 +47,10 @@ const BudgetForm = () => {
 
 
       <div className="input-group custom-input-group">
-        <span className="input-group-text bg-white border-end-0">
-          <FontAwesomeIcon icon={faCalendar} />
-        </span>
-
+      
         <input 
           type="date" 
-          className='form-control border-start-0'
+          className='form-control'
           id="date"
           name="date"
           value={date}
@@ -85,9 +79,11 @@ const BudgetForm = () => {
         </select>
       </div>
 
-      <button type="submit" className="btn btn-primary w-100">
-        Add Entry
-      </button>
+      <div className='w-100 custom-btn-group'>
+        <button type="submit" className="btn btn-brand w-100">
+          Add Entry
+        </button>
+      </div>
     </form>
   )
 }

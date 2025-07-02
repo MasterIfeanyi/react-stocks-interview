@@ -256,16 +256,18 @@ section {
 }
 
 
-
+form {
+  padding: 0;
+}
 
 
 form .form-control{
   color: black;
-  border: black;
+  border: 1px solid black;
 	outline: none;
   border-radius: 15px;
   padding: 0.5rem 1rem;
-  background-color: #ddd;
+  background-color: white;
 }
 
 form .form-control:focus{

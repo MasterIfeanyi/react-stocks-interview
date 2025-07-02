@@ -8,7 +8,7 @@ const Budget = () => {
     <section className='section'>
         <div className="container">
             <div className="row align-items-center">
-                <div className="col-lg-4 col-md-5">
+                <div className="col-lg-4 col-md-6">
                     <BudgetForm />
                 </div>
             </div>

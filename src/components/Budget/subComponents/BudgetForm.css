@@ -1,0 +1,37 @@
+.form-control, .form-select,
+.input-group-text
+{
+  border-color: #dee2e6;
+  outline: none;
+  box-shadow: none;
+  padding: 12px 10px
+}
+
+.form-control:focus, .custom-input-group .form-select:focus,
+.input-group-text:focus
+{
+  border-color: #212529;
+  outline: none;
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.custom-input-group input {
+  border-color: #dee2e6;
+  outline: none;
+  box-shadow: none;
+  padding: 12px 10px;
+}
+
+.custom-input-group input:focus {
+    border-color: #212529;
+    outline: none;
+    box-shadow: none;
+    border-color: #ced4da;
+    border-color: #212529;
+}
+
+.custom-btn-group .btn-brand:hover {
+    background-color: var(--brand);
+    color: white;
+}
