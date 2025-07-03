@@ -29,7 +29,7 @@ const BudgetForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/entries", {
+      const response = await fetch("http://localhost:3500/expenses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
