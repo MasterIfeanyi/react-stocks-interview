@@ -12,7 +12,7 @@ const Budget = () => {
                 <div className="col-lg-4 col-md-6">
                     <BudgetForm />
                 </div>
-                <div className="col-lg-8 col-md-7">
+                <div className="offset-lg-1 col-lg-7 col-md-7">
                     <BudgetTable />
                 </div>
             </div>

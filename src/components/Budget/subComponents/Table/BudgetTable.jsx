@@ -28,7 +28,7 @@ const BudgetTable = () => {
         const today = new Date()
         const last7Days = []
 
-        for (let i = 6; i >= 0; i--) {
+        for (let i = 3; i >= 0; i--) {
             const date = new Date(today)
             date.setDate(today.getDate() - i)
             last7Days.push(date.toISOString().split("T")[0])
@@ -110,6 +110,42 @@ const BudgetTable = () => {
                                         </div>
                                         </button>
                                     </h2>
+
+                                    <div
+                                        id={`collapse${index}`}
+                                        className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+                                        aria-labelledby={`heading${index}`}
+                                        data-bs-parent="#dailyExpensesAccordion"
+                                    >
+                                        <div className="accordion-body">
+                                            {dayData.expenses.map((expense) => (
+                                                <div
+                                                    key={expense.id}
+                                                    className="d-flex justify-content-between align-items-center py-2 border-bottom"
+                                                >
+                                                <div className="flex-grow-1">
+                                                    <span className="expense-item">
+                                                    {expense.description}
+                                                    <span className="text-muted mx-2">
+                                                        {"─".repeat(Math.max(3, 20 - expense.description.length))}
+                                                    </span>
+                                                    <span className="fw-bold">₦{expense.amount.toLocaleString()}</span>
+                                                    </span>
+                                                    <br />
+                                                    <small className="text-muted">{expense.category}</small>
+                                                </div>
+                                                <button
+                                                    className="btn btn-danger btn-sm ms-2"
+                                                    
+                                                    title="Delete expense"
+                                                >
+                                                    ✕
+                                                </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
                                 </div>
                             ))}
                         </div>
