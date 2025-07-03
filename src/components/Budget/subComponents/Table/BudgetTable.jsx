@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import { formatDateHeader } from "../../../../util/formatHeader"
 
 const BudgetTable = () => {
 
@@ -51,25 +51,25 @@ const BudgetTable = () => {
         return dailyExpenses.reverse();
     }
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString)
-        return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-    }
+    // const formatDate = (dateString) => {
+    //     const date = new Date(dateString)
+    //     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+    // }
 
-    const formatDateHeader = (dateString) => {
-        const date = new Date(dateString)
-        const today = new Date()
-        const yesterday = new Date(today)
-        yesterday.setDate(today.getDate() - 1)
+    // const formatDateHeader = (dateString) => {
+    //     const date = new Date(dateString)
+    //     const today = new Date()
+    //     const yesterday = new Date(today)
+    //     yesterday.setDate(today.getDate() - 1)
 
-        if (dateString === today.toISOString().split("T")[0]) {
-        return `Today (${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()})`
-        } else if (dateString === yesterday.toISOString().split("T")[0]) {
-        return `Yesterday (${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()})`
-        } else {
-        return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-        }
-    }
+    //     if (dateString === today.toISOString().split("T")[0]) {
+    //         return `Today (${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()})`
+    //     } else if (dateString === yesterday.toISOString().split("T")[0]) {
+    //         return `Yesterday (${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()})`
+    //     } else {
+    //         return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+    //     }
+    // }
 
 
 
