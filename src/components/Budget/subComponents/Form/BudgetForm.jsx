@@ -7,15 +7,50 @@ import "./BudgetForm.css"
 
 const BudgetForm = () => {
 
-  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
   const [amount, setAmount] = useState(0)
   const [date, setDate] = useState("")
   const [category, setCategory] = useState("")
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    // Basic validation (optional)
+    if (!description || !amount || !date || !category) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const newEntry = {
+      description,
+      amount: Number(amount),
+      date,
+      category,
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/entries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEntry)
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add entry");
+      }
+
+      // Optionally clear form after successful submission
+      setDescription("");
+      setAmount(0);
+      setDate("");
+      setCategory("");
+      alert("Entry added!");
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
   }
-
 
   return (
     <form onSubmit={handleSubmit} className='row g-3 custom-form'>
@@ -26,8 +61,8 @@ const BudgetForm = () => {
           type="text"
           className="form-control"
           placeholder="Title"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
 
