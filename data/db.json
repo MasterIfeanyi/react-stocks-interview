@@ -1,0 +1,264 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "date": "2025-07-01",
+      "amount": 2000,
+      "category": "Transportation",
+      "description": "Bus fare to work",
+      "createdAt": "2025-07-01T08:30:00Z"
+    },
+    {
+      "id": 2,
+      "date": "2025-07-02",
+      "amount": 10000,
+      "category": "Food",
+      "description": "Grocery shopping",
+      "createdAt": "2025-07-02T14:15:00Z"
+    },
+    {
+      "id": 3,
+      "date": "2025-07-03",
+      "amount": 3500,
+      "category": "Food",
+      "description": "Lunch at restaurant",
+      "createdAt": "2025-07-03T12:30:00Z"
+    },
+    {
+      "id": 4,
+      "date": "2025-07-03",
+      "amount": 2780,
+      "category": "Utilities",
+      "description": "Phone bill payment",
+      "createdAt": "2025-07-03T16:45:00Z"
+    },
+    {
+      "id": 5,
+      "date": "2025-06-30",
+      "amount": 5000,
+      "category": "Entertainment",
+      "description": "Movie tickets",
+      "createdAt": "2025-06-30T19:20:00Z"
+    },
+    {
+      "id": 6,
+      "date": "2025-06-30",
+      "amount": 1500,
+      "category": "Transportation",
+      "description": "Taxi fare",
+      "createdAt": "2025-06-30T21:10:00Z"
+    },
+    {
+      "id": 7,
+      "date": "2025-06-29",
+      "amount": 8000,
+      "category": "Food",
+      "description": "Dinner with friends",
+      "createdAt": "2025-06-29T20:30:00Z"
+    },
+    {
+      "id": 8,
+      "date": "2025-06-29",
+      "amount": 3200,
+      "category": "Health",
+      "description": "Pharmacy - medications",
+      "createdAt": "2025-06-29T11:15:00Z"
+    },
+    {
+      "id": 9,
+      "date": "2025-06-28",
+      "amount": 15000,
+      "category": "Shopping",
+      "description": "Clothing purchase",
+      "createdAt": "2025-06-28T15:45:00Z"
+    },
+    {
+      "id": 10,
+      "date": "2025-06-28",
+      "amount": 1200,
+      "category": "Transportation",
+      "description": "Bus fare",
+      "createdAt": "2025-06-28T09:20:00Z"
+    },
+    {
+      "id": 11,
+      "date": "2025-06-27",
+      "amount": 4500,
+      "category": "Food",
+      "description": "Breakfast and coffee",
+      "createdAt": "2025-06-27T08:45:00Z"
+    },
+    {
+      "id": 12,
+      "date": "2025-06-27",
+      "amount": 25000,
+      "category": "Utilities",
+      "description": "Electricity bill",
+      "createdAt": "2025-06-27T14:30:00Z"
+    },
+    {
+      "id": 13,
+      "date": "2025-06-26",
+      "amount": 6800,
+      "category": "Entertainment",
+      "description": "Streaming subscriptions",
+      "createdAt": "2025-06-26T10:00:00Z"
+    },
+    {
+      "id": 14,
+      "date": "2025-06-26",
+      "amount": 2500,
+      "category": "Health",
+      "description": "Gym membership",
+      "createdAt": "2025-06-26T17:15:00Z"
+    },
+    {
+      "id": 15,
+      "date": "2025-06-25",
+      "amount": 12000,
+      "category": "Food",
+      "description": "Weekly groceries",
+      "createdAt": "2025-06-25T16:30:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Food",
+      "color": "#FF6B6B",
+      "icon": "🍽️"
+    },
+    {
+      "id": 2,
+      "name": "Transportation",
+      "color": "#4ECDC4",
+      "icon": "🚗"
+    },
+    {
+      "id": 3,
+      "name": "Entertainment",
+      "color": "#45B7D1",
+      "icon": "🎬"
+    },
+    {
+      "id": 4,
+      "name": "Utilities",
+      "color": "#F7DC6F",
+      "icon": "💡"
+    },
+    {
+      "id": 5,
+      "name": "Health",
+      "color": "#BB8FCE",
+      "icon": "⚕️"
+    },
+    {
+      "id": 6,
+      "name": "Shopping",
+      "color": "#58D68D",
+      "icon": "🛍️"
+    },
+    {
+      "id": 7,
+      "name": "Education",
+      "color": "#F8C471",
+      "icon": "📚"
+    },
+    {
+      "id": 8,
+      "name": "Other",
+      "color": "#AED6F1",
+      "icon": "📋"
+    }
+  ],
+  "dailySummaries": [
+    {
+      "date": "2025-07-03",
+      "totalExpenses": 6280,
+      "expenseCount": 2,
+      "topCategory": "Food"
+    },
+    {
+      "date": "2025-07-02",
+      "totalExpenses": 10000,
+      "expenseCount": 1,
+      "topCategory": "Food"
+    },
+    {
+      "date": "2025-07-01",
+      "totalExpenses": 2000,
+      "expenseCount": 1,
+      "topCategory": "Transportation"
+    },
+    {
+      "date": "2025-06-30",
+      "totalExpenses": 6500,
+      "expenseCount": 2,
+      "topCategory": "Entertainment"
+    },
+    {
+      "date": "2025-06-29",
+      "totalExpenses": 11200,
+      "expenseCount": 2,
+      "topCategory": "Food"
+    },
+    {
+      "date": "2025-06-28",
+      "totalExpenses": 16200,
+      "expenseCount": 2,
+      "topCategory": "Shopping"
+    },
+    {
+      "date": "2025-06-27",
+      "totalExpenses": 29500,
+      "expenseCount": 2,
+      "topCategory": "Utilities"
+    },
+    {
+      "date": "2025-06-26",
+      "totalExpenses": 9300,
+      "expenseCount": 2,
+      "topCategory": "Entertainment"
+    },
+    {
+      "date": "2025-06-25",
+      "totalExpenses": 12000,
+      "expenseCount": 1,
+      "topCategory": "Food"
+    }
+  ],
+  "budgets": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "categoryName": "Food",
+      "monthlyLimit": 50000,
+      "currentSpent": 35500,
+      "month": "2025-07"
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "categoryName": "Transportation",
+      "monthlyLimit": 15000,
+      "currentSpent": 3700,
+      "month": "2025-07"
+    },
+    {
+      "id": 3,
+      "categoryId": 3,
+      "categoryName": "Entertainment",
+      "monthlyLimit": 20000,
+      "currentSpent": 11800,
+      "month": "2025-07"
+    },
+    {
+      "id": 4,
+      "categoryId": 4,
+      "categoryName": "Utilities",
+      "monthlyLimit": 30000,
+      "currentSpent": 27780,
+      "month": "2025-07"
+    }
+  ]
+}
