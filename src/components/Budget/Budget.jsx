@@ -1,3 +1,4 @@
+import FAQ from "../SendMoney/FAQ"
 import BudgetForm from "./subComponents/Form/BudgetForm"
 import BudgetTable from "./subComponents/Table/BudgetTable"
 
@@ -17,6 +18,7 @@ const Budget = () => {
                 </div>
             </div>
         </div>
+        <FAQ /> 
     </section>
   )
 }

@@ -103,73 +103,68 @@ const MarketWatch = () => {
                                 <h4 className="inner__heading-text">Swap</h4>
                             </div>
 
-                            <div className="currency__converter">
-                                <div className="dropdown">
-                                    
-                                    <select 
-                                        className="select-tag" 
-                                        onChange={handleSelectFrom}
-                                        aria-label="From currency"
-                                        required 
-                                        value={from}  
-                                    >
-                                        <option value="USD">USD \u0024</option>
+                        <div className="currency__converter">
+                            <div className="dropdown">
+                                
+                                <select 
+                                    className="select-tag" 
+                                    onChange={handleSelectFrom}
+                                    aria-label="From currency"
+                                    required 
+                                    value={from}  
+                                >
+                                    <option value="USD">USD \u0024</option>
 
-                                        {currencyArray
-                                            .filter((currency) => currency.symbol !== "USD") // Exclude USD from the array
-                                            .map((currency, i) => (
-                                                <option key={i} value={currency.symbol} data-icon={currency.img}>
+                                    {currencyArray
+                                        .filter((currency) => currency.symbol !== "USD") // Exclude USD from the array
+                                        .map((currency, i) => (
+                                            <option key={i} value={currency.symbol} data-icon={currency.img}>
+                                            {currency.symbol} {currency.img}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <input 
+                                type="number"
+                                value={amount || ""}
+                                required
+                                onChange={handleAmount}
+                                className="form-control currency__amount__input"
+                                placeholder="Enter Amount"
+                            />
+                        </div>
+
+                        <div className="currency__converter">
+                            <div className="dropdown">
+                                <select 
+                                    className="select-tag" 
+                                    onChange={handleSelectTo}
+                                    aria-label="To currency"
+                                    required
+                                    value={to}  
+                                >
+                                    <option value="NGN">NGN \u20A6</option>
+
+                                    {currencyArray
+                                        .filter((currency) => currency.symbol !== "NGN") // Exclude NGN from the array
+                                        .map((currency, i) => (
+                                            <option key={i} value={currency.symbol} data-icon={currency.img}>
                                                 {currency.symbol} {currency.img}
                                             </option>
                                         ))}
-                                    </select>
-                                </div>
-
-                                <input 
-                                    type="number"
-                                    value={amount || ""}
-                                    required
-                                    onChange={handleAmount}
-                                    className="form-control currency__amount__input"
-                                    placeholder="Enter Amount"
-                                />
-
-
+                                </select>
                             </div>
 
-                            <div className="currency__converter">
-                                <div className="dropdown">
-                                    <select 
-                                        className="select-tag" 
-                                        onChange={handleSelectTo}
-                                        aria-label="To currency"
-                                        required
-                                        value={to}  
-                                    >
-                                        <option value="NGN">NGN \u20A6</option>
-
-                                        {currencyArray
-                                            .filter((currency) => currency.symbol !== "NGN") // Exclude NGN from the array
-                                            .map((currency, i) => (
-                                                <option key={i} value={currency.symbol} data-icon={currency.img}>
-                                                    {currency.symbol} {currency.img}
-                                                </option>
-                                            ))}
-                                    </select>
-                                </div>
-
-                                <div 
-                                    className="form-control currency__amount__input"
-                                >{loading ? "Loading..." : exchangeValue ? exchangeValue : "Value"}</div>
-
-
-                            </div>
-                            
-                        </div>
-
+                            <div 
+                                className="form-control currency__amount__input"
+                            >{loading ? "Loading..." : exchangeValue ? exchangeValue : "Value"}</div>
+                        </div>    
                     </div>
                 </div>
             </div>
+        </div>
+    
         <Reviews />
     </section>
   )

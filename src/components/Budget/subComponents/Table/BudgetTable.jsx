@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 import { formatDateHeader } from "../../../../util/formatHeader"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrash } from "@fortawesome/free-solid-svg-icons"
+
+
 
 const BudgetTable = () => {
 
@@ -19,7 +23,7 @@ const BudgetTable = () => {
 
         fetchEntries();
 
-    }, [])
+    }, [entries])
 
 
 
@@ -56,7 +60,18 @@ const BudgetTable = () => {
     //     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     // }
 
-    
+    // Delete function
+    const handleDelete = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3500/expenses/${id}`, {
+                method: "DELETE",
+            });
+            if (!response.ok) throw new Error("Failed to delete entry");
+            setEntries(entries.filter(entry => entry.id !== id));
+        } catch (error) {
+            alert("Error deleting entry: " + error.message);
+        }
+    };
 
 
 
@@ -115,10 +130,10 @@ const BudgetTable = () => {
                                             </div>
                                             <button
                                                 className="btn btn-danger btn-sm ms-2"
-                                                
+                                                onClick={() => handleDelete(expense.id)}
                                                 title="Delete expense"
                                             >
-                                                ✕
+                                                <FontAwesomeIcon icon={faTrash} />
                                             </button>
                                             </div>
                                         ))}

@@ -126,6 +126,34 @@
       "amount": 4500,
       "date": "2025-07-20",
       "category": "utilities"
+    },
+    {
+      "id": "1f1b",
+      "description": "designer",
+      "amount": 3000,
+      "date": "2025-07-03",
+      "category": "entertainment"
+    },
+    {
+      "id": "dacd",
+      "description": "child",
+      "amount": 500,
+      "date": "2025-07-03",
+      "category": "transport"
+    },
+    {
+      "id": "2a48",
+      "description": "annex",
+      "amount": 550,
+      "date": "2025-07-02",
+      "category": "healthcare"
+    },
+    {
+      "id": "99c8",
+      "description": "America Day",
+      "amount": 7800,
+      "date": "2025-07-04",
+      "category": "healthcare"
     }
   ],
   "categories": [
