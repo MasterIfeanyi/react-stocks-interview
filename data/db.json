@@ -147,13 +147,6 @@
       "amount": 550,
       "date": "2025-07-02",
       "category": "healthcare"
-    },
-    {
-      "id": "99c8",
-      "description": "America Day",
-      "amount": 7800,
-      "date": "2025-07-04",
-      "category": "healthcare"
     }
   ],
   "categories": [
