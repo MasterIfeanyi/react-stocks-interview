@@ -1,6 +1,16 @@
 import {useState} from 'react'
-
 import "./BudgetForm.css"
+
+const categories = [
+  { value: "", label: "Employment Type" },
+  { value: "food", label: "Food" },
+  { value: "transport", label: "Transport" },
+  { value: "entertainment", label: "Entertainment" },
+  { value: "utilities", label: "Utilities" },
+  { value: "shopping", label: "Shopping" },
+  { value: "healthcare", label: "Healthcare" },
+  { value: "other", label: "Other" },
+];
 
 
 const BudgetForm = () => {
@@ -102,14 +112,11 @@ const BudgetForm = () => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="">Select category</option>
-          <option value="food">Food</option>
-          <option value="transport">Transport</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="utilities">Utilities</option>
-          <option value="shopping">Shopping</option>
-          <option value="healthcare">Healthcare</option>
-          <option value="other">Other</option>
+          {categories.map((each) => (
+            <option key={each.label} value={each.value}>
+              {each.label}
+            </option>
+          ))}
         </select>
       </div>
 

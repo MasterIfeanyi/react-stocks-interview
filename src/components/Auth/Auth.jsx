@@ -36,6 +36,10 @@ const Auth = () => {
                                 </button>
                             </div>
                         </div>
+
+
+                        {formType === "login" ? <Login /> : <Register />}
+
                     </div>
                 </div>
             </div>
