@@ -6,6 +6,9 @@ const Auth = () => {
 
     const [formType, setFormType] = useState("login");
 
+    const toggleForm = (type) => {
+        setFormType(type);
+    };
 
   return (
     <section>
@@ -17,7 +20,21 @@ const Auth = () => {
                 <div className=" col-lg-6 col-md-6 custom__mt">
                     <div className="outer-shell">
                         <div className="inner__heading">
+                            <div className="btn-group">
+                                <button
+                                    onClick={() => toggleForm("login")}
+                                    className={`btn ${formType === "login" ? "btn-tabpanel" : "btn-outline-tabpanel"}`}
+                                >
+                                    Sign In
+                                </button>
 
+                                <button
+                                    onClick={() => toggleForm("register")}
+                                    className={`btn ${formType === "register" ? "btn-tabpanel" : "btn-outline-tabpanel"}`}
+                                >
+                                    Register
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
