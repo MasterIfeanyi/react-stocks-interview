@@ -62,9 +62,9 @@ const Reviews = () => {
                 </div>
             </div>
         </div>
-            {/* <div className="row" style={{backgroundColor: "#F9F9F9"}}>
+        {/* <div className="row" style={{backgroundColor: "#F9F9F9"}}>
 
-            </div> */}
+        </div> */}
     </div>
   )
 }

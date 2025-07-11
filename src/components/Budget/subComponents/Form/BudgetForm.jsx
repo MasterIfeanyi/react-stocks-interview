@@ -27,11 +27,12 @@ const BudgetForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3500/expenses", {
+      const response = await fetch("http://localhost:5000/api/budget", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify(newEntry)
       });
 
