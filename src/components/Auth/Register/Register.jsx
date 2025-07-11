@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Register.css"
 
 const Register = () => {
   return (
@@ -6,22 +7,29 @@ const Register = () => {
         <div className="input-group custom-input-group">
             <input
                 type="text"
-                className="form-control"
+                className="custom-form-control"
                 placeholder="Name"
             />
         </div>
         <div className="input-group custom-input-group">
             <input
                 type="email"
-                className="form-control"
+                className="custom-form-control"
                 placeholder="Email"
             />
         </div>
         <div className="input-group custom-input-group">
             <input
                 type="password"
-                className="form-control"
+                className="custom-form-control"
                 placeholder="Password"
+            />
+        </div>
+        <div className="input-group custom-input-group">
+            <input
+                type="date"
+                className="custom-form-control"
+                placeholder="Date"
             />
         </div>
         <div className="input-group custom-input-group">
