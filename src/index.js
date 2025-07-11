@@ -13,7 +13,6 @@ import 'owl.carousel/dist/owl.carousel.js';
 import 'owl.carousel';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './app/store';
