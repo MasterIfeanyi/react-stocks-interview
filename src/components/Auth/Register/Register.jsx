@@ -3,7 +3,7 @@ import "./Register.css"
 
 const Register = () => {
   return (
-    <form className='row g-3 custom-form'>
+    <form className='row g-3 custom-form mt-2 mb-5'>
         <div className="input-group custom-input-group">
             <input
                 type="text"
@@ -34,7 +34,7 @@ const Register = () => {
         </div>
         <div className="input-group custom-input-group">
             <select
-                className="form-select"
+                className="custom-form-select"
                 id="gender"
                 name="gender"
             >
@@ -45,7 +45,7 @@ const Register = () => {
         </div>
         <div className="input-group custom-input-group">
             <select
-                className="form-select"
+                className="custom-form-select"
                 id="category"
                 name="category"
             >
