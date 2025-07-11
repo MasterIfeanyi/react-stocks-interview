@@ -12,8 +12,12 @@ const BudgetTable = () => {
     useEffect(() => {
         const fetchEntries = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/budget");
+                const response = await fetch("http://localhost:5000/api/budget", {
+                    method: 'GET',
+                    credentials: 'include'
+                });
                 const data = await response.json();
+                console.log(data);
                 setEntries(data);
             } catch (error) {
                 console.error("Failed to fetch entries:", error);
