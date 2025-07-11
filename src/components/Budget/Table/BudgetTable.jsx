@@ -16,11 +16,22 @@ const BudgetTable = () => {
                     method: 'GET',
                     credentials: 'include'
                 });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+
                 const data = await response.json();
                 console.log(data);
-                setEntries(data);
+
+
+                // setEntries(Array.isArray(data) ? data : []);
+
+
             } catch (error) {
                 console.error("Failed to fetch entries:", error);
+                setEntries([]);
             }
         }
 

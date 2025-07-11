@@ -11,6 +11,7 @@ import {Routes, Route, Navigate} from "react-router-dom"
 import Layout from './Layout/Layout';
 import $ from 'jquery';
 import Index from './components/Home/Index';
+import Auth from './components/Auth/Auth';
 window.$ = window.jQuery = $;
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path='send' element={<SendMoney />} />
           <Route path="convert" element={<Convert />} />
           <Route path='budget' element={<Budget />} />
+          <Route path='auth' element={<Auth />} />
           {/* catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
