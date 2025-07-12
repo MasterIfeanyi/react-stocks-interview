@@ -1,9 +1,13 @@
 // src/components/AuthProvider.js
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import api from '../api';
+import api from '../api/axios';
 
 export const AuthContext = createContext();
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

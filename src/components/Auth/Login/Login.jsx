@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthProvider';
-import api from '../api';
+import api from '../../../api/axios';
 
 const Login = () => {
 
@@ -11,7 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const { login } = useAuth();
+    
 
     const loginMutation = useMutation({
         mutationFn: (credentials) => api.post('/auth/login', credentials),
@@ -30,7 +30,7 @@ const Login = () => {
     };
 
   return (
-    <form className='row g-3 custom-form my-2'>
+    <form className='row g-3 custom-form my-2' onSubmit={handleSubmit}>
         <div className="input-group custom-input-group">
             <input
                 type="email"
@@ -50,7 +50,11 @@ const Login = () => {
             />
         </div>
         <div className=''>
-            <button type="submit" className="btn btn-brand w-100 create-btn">
+            <button 
+                type="submit" 
+                className="btn btn-brand w-100 create-btn"
+                disabled={loginMutation.isPending}
+            >
                 Add Entry
             </button>
         </div>
