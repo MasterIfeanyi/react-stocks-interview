@@ -19,12 +19,32 @@ const categories = [
 
 const Register = () => {
 
+    const navigate = useNavigate();
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        dob: '',
+        gender: '',
+        employmentType: ''
+    });
+
     const registerMutation = useMutation({
         mutationFn: async (userData) => {
             const response = await api.post('/auth/register', userData);
             return response.data;
         },
         onSuccess: (data) => {
+            // Clear all form fields
+            setFormData({
+                name: '',
+                email: '',
+                password: '',
+                dob: '',
+                gender: '',
+                employmentType: ''
+            });
             alert('Registration successful! Please login.');
             navigate('/login');
         },
@@ -33,6 +53,16 @@ const Register = () => {
         }
     });
 
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+        ...prev,
+        [name]: value
+        }));
+    };
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
