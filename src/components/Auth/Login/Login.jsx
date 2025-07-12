@@ -11,7 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    
+    const { login } = useAuth();
 
     const loginMutation = useMutation({
         mutationFn: (credentials) => api.post('/auth/login', credentials),
