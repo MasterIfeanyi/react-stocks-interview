@@ -1,4 +1,10 @@
 import {useState} from 'react'
+
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
+import api from '../../api';
+import { useAuth } from '../../context/AuthProvider';
+
 import "./BudgetForm.css"
 
 const categories = [
@@ -15,10 +21,37 @@ const categories = [
 
 const BudgetForm = () => {
 
+  const { user } = useAuth();
+  const queryClient = useQueryClient();
+
   const [description, setDescription] = useState("")
   const [amount, setAmount] = useState(0)
   const [date, setDate] = useState("")
   const [category, setCategory] = useState("")
+
+
+
+  const addEntryMutation = useMutation({
+    mutationFn: async (newEntry) => {
+      const response = await api.post("/budget", newEntry);
+      return response.data;
+    },
+    onSuccess: () => {
+      // Invalidate and refetch budget data
+      queryClient.invalidateQueries({ queryKey: ['budget'] });
+      // Reset form
+      setDescription("");
+      setAmount(0);
+      setDate("");
+      setCategory("");
+    },
+    onError: (error) => {
+      alert("Error adding entry: " + error.message);
+    }
+  });
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,30 +69,34 @@ const BudgetForm = () => {
       category,
     };
 
-    try {
-      const response = await fetch("http://localhost:5000/api/budget", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        credentials: "include",
-        body: JSON.stringify(newEntry)
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to add entry");
-      }
-
-      // Optionally clear form after successful submission
-      setDescription("");
-      setAmount(0);
-      setDate("");
-      setCategory("");
-      alert("Entry added!");
-    } catch (error) {
-      alert("Error: " + error.message);
-    }
+    addEntryMutation.mutate(newEntry);
   }
+
+  
+  //   try {
+  //     const response = await fetch("http://localhost:5000/api/budget", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       credentials: "include",
+  //       body: JSON.stringify(newEntry)
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error("Failed to add entry");
+  //     }
+
+  //     // Optionally clear form after successful submission
+  //     setDescription("");
+  //     setAmount(0);
+  //     setDate("");
+  //     setCategory("");
+  //     alert("Entry added!");
+  //   } catch (error) {
+  //     alert("Error: " + error.message);
+  //   }
+  // }
 
   return (
     <form onSubmit={handleSubmit} className='row g-3 custom-form'>
