@@ -1,9 +1,8 @@
 import axios from "axios"
 
-const BASE_URL = "https://ifeanyi-stock-backend.glitch.me/"
-// const BASE_URL = "https://ifeanyi-stock-backend.herokuapp.com/"
-// const BASE_URL = "http://localhost:3500"
-
-export default axios.create({
-    baseURL: BASE_URL
+const api = axios.create({
+  baseURL: 'http://localhost:5000/api', // your backend API base URL
+  withCredentials: true, // important for http-only cookies
 });
+
+export default api;
