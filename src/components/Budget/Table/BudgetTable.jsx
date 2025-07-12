@@ -4,41 +4,39 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 
 
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+
 
 const BudgetTable = () => {
 
-    const [entries, setEntries] = useState([])
-
-    useEffect(() => {
-        const fetchEntries = async () => {
-            try {
-                const response = await fetch("http://localhost:5000/api/budget", {
-                    method: 'GET',
-                    credentials: 'include'
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+    const { user } = useAuth();
+    const queryClient = useQueryClient();
 
 
-                const data = await response.json();
-                console.log(data);
+    // Fetch budget entries
+    const { data: entries = [], isLoading, error } = useQuery({
+        queryKey: ['budget'],
+        queryFn: async () => {
+        const response = await api.get("/budget");
+        return response.data;
+        },
+        enabled: !!user, // Only fetch if user is authenticated
+        staleTime: 1000 * 60 * 5, // 5 minutes
+    });
 
-
-                // setEntries(Array.isArray(data) ? data : []);
-
-
-            } catch (error) {
-                console.error("Failed to fetch entries:", error);
-                setEntries([]);
-            }
+    // Delete mutation
+    const deleteMutation = useMutation({
+        mutationFn: async (id) => {
+        await api.delete(`/expenses/${id}`);
+        },
+        onSuccess: () => {
+        // Invalidate and refetch budget data
+        queryClient.invalidateQueries({ queryKey: ['budget'] });
+        },
+        onError: (error) => {
+        alert("Error deleting entry: " + error.message);
         }
-
-
-        fetchEntries();
-
-    }, [entries])
+    });
 
 
 

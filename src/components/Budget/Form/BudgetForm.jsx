@@ -2,7 +2,7 @@ import {useState} from 'react'
 import "./BudgetForm.css"
 
 const categories = [
-  { value: "", label: "Employment Type" },
+  { value: "", label: "Category" },
   { value: "food", label: "Food" },
   { value: "transport", label: "Transport" },
   { value: "entertainment", label: "Entertainment" },

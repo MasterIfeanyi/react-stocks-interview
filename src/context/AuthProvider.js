@@ -39,7 +39,7 @@ export default function AuthProvider({ children }) {
   };
 
   const logout = async () => {
-    await api.post('/auth/logout');
+    await api.post('/logout');
     setUser(null);
   };
 

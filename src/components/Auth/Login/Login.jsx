@@ -14,7 +14,7 @@ const Login = () => {
     const { login } = useAuth();
 
     const loginMutation = useMutation({
-        mutationFn: (credentials) => api.post('/auth/login', credentials),
+        mutationFn: (credentials) => api.post('/login', credentials),
         onSuccess: (data) => {
             login(data.data.user);
             navigate('/budget');
@@ -55,7 +55,7 @@ const Login = () => {
                 className="btn btn-brand w-100 create-btn"
                 disabled={loginMutation.isPending}
             >
-                Add Entry
+                Login
             </button>
         </div>
     </form>
