@@ -60,6 +60,25 @@ function App() {
               <Route path="convert" element={<Convert />} />
               <Route path='budget' element={<Budget />} />
               <Route path='auth' element={<Auth />} />
+
+              {/* <Route
+                path="/budget"
+                element={
+                  <ProtectedRoute>
+                    <Budget />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/convert"
+                element={
+                  <ProtectedRoute>
+                    <Currency />
+                  </ProtectedRoute>
+                }
+              /> */}
+
+
               {/* catch all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
