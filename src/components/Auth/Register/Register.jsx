@@ -1,5 +1,10 @@
 import "./Register.css"
 
+import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import api from '../../api';
+import { useNavigate } from 'react-router-dom';
+
 const categories = [
   { value: "", label: "Employment Type" },
   { value: "food", label: "Food" },
@@ -13,8 +18,34 @@ const categories = [
 
 
 const Register = () => {
+
+    const registerMutation = useMutation({
+        mutationFn: async (userData) => {
+            const response = await api.post('/auth/register', userData);
+            return response.data;
+        },
+        onSuccess: (data) => {
+            alert('Registration successful! Please login.');
+            navigate('/login');
+        },
+        onError: (error) => {
+            alert(`Registration failed: ${error.response?.data?.message || error.message}`);
+        }
+    });
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+
+        registerMutation.mutate(formData);
+    }
+
+
+
+
   return (
-    <form className='row g-3 custom-form mt-2 mb-2'>
+    <form onSubmit={handleSubmit} className='row g-3 custom-form mt-2 mb-2'>
         <div className="input-group custom-input-group">
             <input
                 type="text"

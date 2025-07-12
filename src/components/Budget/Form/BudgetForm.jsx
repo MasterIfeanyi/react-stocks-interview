@@ -2,8 +2,8 @@ import {useState} from 'react'
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import api from '../../api';
-import { useAuth } from '../../context/AuthProvider';
+import api from '../../../api/axios';
+import { useAuth } from '../../../context/AuthProvider';
 
 import "./BudgetForm.css"
 
@@ -72,7 +72,7 @@ const BudgetForm = () => {
     addEntryMutation.mutate(newEntry);
   }
 
-  
+
   //   try {
   //     const response = await fetch("http://localhost:5000/api/budget", {
   //       method: "POST",
