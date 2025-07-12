@@ -7,7 +7,7 @@ const Features = () => {
 
   return (
     <section className='section' style={{overflow: "hidden"}}>
-        <div classNameName="container">
+        <div className="container">
             <div className="row">
                 <div className="section-title">
                     <h6>Features</h6>
@@ -26,7 +26,7 @@ const Features = () => {
                         <h6>Save automatically</h6>
                         <p>Keep track of daily, weekly or monthly expenses. Once you choose, our system does the rest for you.</p>
                         <a href="">
-                            <img src="./images/56.svg" alt="" style={{width: "20px;", height: "20px"}} />
+                            <img src="./images/56.svg" alt="" style={{width: "20px", height: "20px"}} />
                         </a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const Features = () => {
                         <h6>Currency Converter</h6>
                         <p>You can manually check exchange rates at anytime, anywhere.</p>
                         <a href="">
-                            <img src="./images/56.svg" alt="" style={{width: "20px;", height: "20px"}} />
+                            <img src="./images/56.svg" alt="" style={{width: "20px", height: "20px"}} />
                         </a>
                     </div>
                 </div>
