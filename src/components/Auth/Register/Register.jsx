@@ -2,7 +2,7 @@ import "./Register.css"
 
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import api from '../../api';
+import api from '../../../api/axios';
 import { useNavigate } from 'react-router-dom';
 
 const categories = [
@@ -22,7 +22,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        name: '',
+        username: '',
         email: '',
         password: '',
         dob: '',
@@ -32,16 +32,16 @@ const Register = () => {
 
     const registerMutation = useMutation({
         mutationFn: async (userData) => {
-            const response = await api.post('/auth/register', userData);
+            const response = await api.post('/register', userData);
             return response.data;
         },
         onSuccess: (data) => {
             // Clear all form fields
             setFormData({
-                name: '',
+                username: '',
                 email: '',
                 password: '',
-                dob: '',
+                dateOfBirth: '',
                 gender: '',
                 employmentType: ''
             });
@@ -81,8 +81,8 @@ const Register = () => {
                 type="text"
                 className="custom-form-control"
                 placeholder="Name"
-                name="name"
-                value={formData.name}
+                name="username"
+                value={formData.username}
                 onChange={handleChange}
                 required
             />
@@ -114,8 +114,8 @@ const Register = () => {
                 type="date"
                 className="custom-form-control"
                 placeholder="Date"
-                name="dob"
-                value={formData.dob}
+                name="dateOfBirth"
+                value={formData.dateOfBirth}
                 onChange={handleChange}
             />
         </div>
@@ -124,10 +124,12 @@ const Register = () => {
                 className="custom-form-select"
                 id="gender"
                 name="gender"
+                value={formData.gender}
+                onChange={handleChange}
             >
                 <option value="">Gender</option>
-                <option value="food">Male</option>
-                <option value="transport">Female</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             </select>
         </div>
         <div className="input-group custom-input-group">
@@ -140,7 +142,7 @@ const Register = () => {
             >
                 {categories.map((each) => (
                     <option key={each.label} value={each.value}>
-                    {each.label}
+                        {each.label}
                     </option>
                 ))}
             </select>
