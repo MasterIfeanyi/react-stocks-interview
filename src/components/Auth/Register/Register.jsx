@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 const categories = [
   { value: "", label: "Employment Type" },
-  { value: "food", label: "Food" },
-  { value: "transport", label: "Transport" },
-  { value: "entertainment", label: "Entertainment" },
-  { value: "utilities", label: "Utilities" },
-  { value: "shopping", label: "Shopping" },
-  { value: "healthcare", label: "Healthcare" },
+  { value: "teacher", label: "Teacher" },
+  { value: "musician", label: "Music Artist" },
+  { value: "designer", label: "UI Design" },
+  { value: "developer", label: "Software Development" },
+  { value: "engineer", label: "Engineer" },
+  { value: "doctor", label: "Doctor" },
   { value: "other", label: "Other" },
 ];
 
@@ -81,6 +81,10 @@ const Register = () => {
                 type="text"
                 className="custom-form-control"
                 placeholder="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
             />
         </div>
         <div className="input-group custom-input-group">
@@ -88,6 +92,10 @@ const Register = () => {
                 type="email"
                 className="custom-form-control"
                 placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
             />
         </div>
         <div className="input-group custom-input-group">
@@ -95,6 +103,10 @@ const Register = () => {
                 type="password"
                 className="custom-form-control"
                 placeholder="Password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
             />
         </div>
         <div className="input-group custom-input-group">
@@ -102,6 +114,9 @@ const Register = () => {
                 type="date"
                 className="custom-form-control"
                 placeholder="Date"
+                name="dob"
+                value={formData.dob}
+                onChange={handleChange}
             />
         </div>
         <div className="input-group custom-input-group">
@@ -118,8 +133,10 @@ const Register = () => {
         <div className="input-group custom-input-group">
             <select
                 className="custom-form-select"
-                id="category"
-                name="category"
+                id="employmentType"
+                name="employmentType"
+                value={formData.employmentType}
+                onChange={handleChange}
             >
                 {categories.map((each) => (
                     <option key={each.label} value={each.value}>
