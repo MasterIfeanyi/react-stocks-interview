@@ -4,6 +4,7 @@ import Hero from './subComponents/banner/Hero'
 import Account from './subComponents/CTA/Account.jsx'
 import Story from './subComponents/story/Story.jsx'
 import SmartCTA from './Smart CTA/SmartCTA.jsx'
+import Features from './subComponents/Features/Features.jsx'
 
 const Index = () => {
 
@@ -13,6 +14,7 @@ const Index = () => {
     <>
         <Hero />
         <SmartCTA />
+        <Features />
         <Story />
         <Account />
     </>

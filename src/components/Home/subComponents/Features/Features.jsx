@@ -1,4 +1,4 @@
-import React from 'react'
+import "./Features.css"
 
 const Features = () => {
 
@@ -6,7 +6,7 @@ const Features = () => {
 
 
   return (
-    <section>
+    <section className='section'>
         <div classNameName="container">
             <div className="row">
                 <div className="section-title">
@@ -16,35 +16,31 @@ const Features = () => {
             </div>
 
 
-            <div className="row g-5 my-3 text-center">
-                {/* 1 */}
-                <div className="col-lg-4 col-sm-6">
-                    <div className="features">
-                        <div className="icon">
-                            <img src="./images/94.svg" alt="" />
-                        </div>
-                        <h5>Dedicated accountability manager</h5>
-                        <p>After registration, get someone assigned to your account, an actual person who looks after you and your savings, to make sure you acheive your saving goal in no time.</p>
-                    </div>
-                </div>
+            <div className="row g-5 my-3 text-center justify-content-center">
                 {/* 2 */}
-                <div className="col-lg-4 col-sm-6">
+                <div className="col-lg-5 col-sm-6">
                     <div className="features">
                         <div className="icon">
                             <img src="./images/95.svg" alt="" />
                         </div>
-                        <h5>Save automatically</h5>
-                        <p>Choose between automatic daily, weekly or monthly savings. Once you choose, our system does the rest for you. You're in control, and can always change your settings anytime.</p>
+                        <h6>Save automatically</h6>
+                        <p>Keep track of daily, weekly or monthly expenses. Once you choose, our system does the rest for you.</p>
+                        <a href="">
+                            <img src="./images/56.svg" alt="" style={{width: "20px;", height: "20px"}} />
+                        </a>
                     </div>
                 </div>
                 {/* 3 */}
-                <div className="col-lg-4 col-sm-6">
+                <div className="col-lg-5 col-sm-6">
                     <div className="features">
                         <div className="icon">
                             <img src="./images/96.svg" alt="" />
                         </div>
-                        <h5>Manual Topups</h5>
-                        <p>Don't fancy automatic savings? No problem, you can manually top up your savings at anytime, anywhere.</p>
+                        <h6>Currency Converter</h6>
+                        <p>You can manually check exchange rates at anytime, anywhere.</p>
+                        <a href="">
+                            <img src="./images/56.svg" alt="" style={{width: "20px;", height: "20px"}} />
+                        </a>
                     </div>
                 </div>
             </div>
