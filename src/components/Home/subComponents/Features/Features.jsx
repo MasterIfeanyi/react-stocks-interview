@@ -6,7 +6,7 @@ const Features = () => {
 
 
   return (
-    <section className='section'>
+    <section className='section' style={{overflow: "hidden"}}>
         <div classNameName="container">
             <div className="row">
                 <div className="section-title">

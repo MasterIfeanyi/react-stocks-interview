@@ -233,6 +233,19 @@ section {
 
 /* custom styling */
 
+.section-title {
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+
+
+.section-title h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--grey);
+}
+
+
 .item {
   display: flex;
   align-items: center;
