@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { formatDateHeader } from "../../../util/formatHeader"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
+import api from "../../../api/axios";
+import { useAuth } from "../../../context/AuthProvider";
 
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
@@ -17,8 +19,8 @@ const BudgetTable = () => {
     const { data: entries = [], isLoading, error } = useQuery({
         queryKey: ['budget'],
         queryFn: async () => {
-        const response = await api.get("/budget");
-        return response.data;
+            const response = await api.get("/budget");
+            return response.data;
         },
         enabled: !!user, // Only fetch if user is authenticated
         staleTime: 1000 * 60 * 5, // 5 minutes
@@ -27,14 +29,14 @@ const BudgetTable = () => {
     // Delete mutation
     const deleteMutation = useMutation({
         mutationFn: async (id) => {
-        await api.delete(`/expenses/${id}`);
+            await api.delete(`/expenses/${id}`);
         },
         onSuccess: () => {
-        // Invalidate and refetch budget data
-        queryClient.invalidateQueries({ queryKey: ['budget'] });
+            // Invalidate and refetch budget data
+            queryClient.invalidateQueries({ queryKey: ['budget'] });
         },
         onError: (error) => {
-        alert("Error deleting entry: " + error.message);
+            alert("Error deleting entry: " + error.message);
         }
     });
 
@@ -76,16 +78,30 @@ const BudgetTable = () => {
     // Delete function
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3500/expenses/${id}`, {
-                method: "DELETE",
-            });
-            if (!response.ok) throw new Error("Failed to delete entry");
-            setEntries(entries.filter(entry => entry.id !== id));
+            deleteMutation.mutate(id);
+            // const response = await fetch(`http://localhost:3500/expenses/${id}`, {
+            //     method: "DELETE",
+            // });
+            // if (!response.ok) throw new Error("Failed to delete entry");
+            // setEntries(entries.filter(entry => entry.id !== id));
         } catch (error) {
             alert("Error deleting entry: " + error.message);
         }
     };
 
+
+    if (isLoading) {
+        return <div className="text-center py-4">Loading budget entries...</div>;
+    }
+
+
+    if (error) {
+        return (
+            <div className="text-center text-danger py-4">
+                Error loading budget entries: {error.message}
+            </div>
+        );
+    }
 
 
   return (
@@ -145,6 +161,7 @@ const BudgetTable = () => {
                                                 className="btn btn-danger btn-sm ms-2"
                                                 onClick={() => handleDelete(expense.id)}
                                                 title="Delete expense"
+                                                disabled={deleteMutation.isPending}
                                             >
                                                 <FontAwesomeIcon icon={faTrash} />
                                             </button>
